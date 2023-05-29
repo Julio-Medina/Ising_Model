@@ -41,7 +41,7 @@ def time_size_simulation(min_lattice_size=10,
         times.append(delta_time)
     return list(size_range), times, final_magnetizations
 
-lattice_size, times, magnetization=time_size_simulation(fixed_T=1,max_lattice_size=200)
+lattice_size, times, magnetization=time_size_simulation(fixed_T=1,max_lattice_size=500)
 plt.plot(lattice_size,times)
 
 

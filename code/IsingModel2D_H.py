@@ -40,7 +40,8 @@ class isingModel(object): # Ising Model object
         self.lattice[i][j]='''
 
     #calcula la energia de los vecinos mas cercanos
-    # computes the energy of the nearest neighbors
+    # computes the energy of the nearest neighbors,
+    # this computes the periodic 1D periodic version of the model
     def nearestNeighborEnergy(self,x,y):
         x1=x2=x3=x4=x
         y1=y2=y3=y4=y
@@ -88,13 +89,22 @@ class isingModel(object): # Ising Model object
 
     # runs the Monte Carlo simulation for the lattice at the given parameters
     def runMonteCarlo(self,T):
+        initial_energy=self.latticeEnergy()
+        deltas_E=[initial_energy]
+        
         for i in range(self.iterations):
             randomX=random.randrange(self.N)
             randomY=random.randrange(self.N)
-            energy=1*self.nearestNeighborEnergy(randomX,randomY)
-            if energy>0:
+            energy=-1*self.nearestNeighborEnergy(randomX,randomY)-1*self.lattice[randomX][randomY]*self.HKb
+            #energy=self.latticeEnergy()
+            delta_energy=deltas_E[i]-energy
+            deltas_E.append(delta_energy)
+            if deltas_E[i+1]>0:
                 self.lattice[randomX][randomY]*=-1
-            elif math.exp(energy/T*self.JKb)>random.random() :
+            #elif math.exp(energy/(T*self.JKb))>random.random() :
+            elif math.exp(deltas_E[i+1]/(T))>random.random() :
+            #print(deltas_E[i+1])
+            #if math.exp(-deltas_E[i+1]/(T))>random.random() :
                 self.lattice[randomX][randomY]*=-1
                 
     def plotLattice(self):
