@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.5.18)  28 MAY 2023 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.5.18)  28 MAY 2023 21:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -425,7 +425,14 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count303
 \l__pdf_internal_box=\box51
 )
-No file Ising_Model.aux.
+(./Ising_Model.aux
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+)
 \openout1 = `Ising_Model.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
@@ -446,7 +453,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count304
 \scratchdimen=\dimen178
@@ -485,6 +492,8 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 24.
 LaTeX Info: Redefining \pageref on input line 24.
 LaTeX Info: Redefining \nameref on input line 24.
+
+(./Ising_Model.out) (./Ising_Model.out)
 \@outlinefile=\write3
 \openout3 = `Ising_Model.out'.
 
@@ -500,21 +509,17 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<LatticeIsing.png, id=5, 343.2825pt x 289.08pt>
+<LatticeIsing.png, id=33, 343.2825pt x 289.08pt>
 File: LatticeIsing.png Graphic file (type png)
 <use LatticeIsing.png>
 Package pdftex.def Info: LatticeIsing.png  used on input line 61.
 (pdftex.def)             Requested size: 137.31056pt x 115.62994pt.
-
-
-LaTeX Warning: Reference `H1' on page 1 undefined on input line 71.
-
-<Neighbor.png, id=6, 153.57375pt x 173.14688pt>
+<Neighbor.png, id=35, 153.57375pt x 173.14688pt>
 File: Neighbor.png Graphic file (type png)
 <use Neighbor.png>
 Package pdftex.def Info: Neighbor.png  used on input line 74.
 (pdftex.def)             Requested size: 61.4284pt x 69.25752pt.
-[1
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}pdfTeX warning (ext4): desti
 nation with the same identifier (name{figure.1}) has been already used, duplica
@@ -524,16 +529,9 @@ te ignored
                                                   \fi \fi 
 l.77 \end{figure}
                   <./LatticeIsing.png>]
-
-LaTeX Warning: Reference `H1' on page 2 undefined on input line 78.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 86--88
 
  []
-
-
-LaTeX Warning: Citation `silvio' on page 2 undefined on input line 91.
 
 [2pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
@@ -541,27 +539,8 @@ has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.98 \end{equation}
-                    <./Neighbor.png>]
-
-LaTeX Warning: Reference `MCavg' on page 3 undefined on input line 120.
-
-
-LaTeX Warning: Reference `MCavg2' on page 3 undefined on input line 125.
-
-
-LaTeX Warning: Reference `masterEq' on page 3 undefined on input line 126.
-
-
-LaTeX Warning: Reference `equi' on page 3 undefined on input line 126.
-
-[3]
-
-LaTeX Warning: Reference `partition' on page 4 undefined on input line 131.
-
-
-LaTeX Warning: Reference `equi' on page 4 undefined on input line 131.
-
-<FluxDiagram.png, id=54, 420.82219pt x 540.51938pt>
+                    <./Neighbor.png>] [3]
+<FluxDiagram.png, id=86, 420.82219pt x 540.51938pt>
 File: FluxDiagram.png Graphic file (type png)
 <use FluxDiagram.png>
 Package pdftex.def Info: FluxDiagram.png  used on input line 164.
@@ -593,31 +572,22 @@ LaTeX Info: Redefining \% on input line 25.
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 191.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 191.
+Package rerunfilecheck Info: File `Ising_Model.out' has not changed.
+(rerunfilecheck)             Checksum: E252A449E08061ECDF68CD298C4A2828;491.
 
 
-Package rerunfilecheck Warning: File `Ising_Model.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Ising_Model.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  E252A449E08061ECDF68CD298C4A2828;491.
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 191.
  ) 
 Here is how much of TeX's memory you used:
- 9240 strings out of 481239
- 136278 string characters out of 5920377
- 422277 words of memory out of 5000000
- 24282 multiletter control sequences out of 15000+600000
+ 9254 strings out of 481239
+ 136488 string characters out of 5920377
+ 422826 words of memory out of 5000000
+ 24290 multiletter control sequences out of 15000+600000
  536508 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,7n,40p,976b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,7n,40p,979b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
@@ -633,10 +603,10 @@ usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Ising_Model.pdf (6 pages, 209856 bytes).
+Output written on Ising_Model.pdf (6 pages, 209945 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 175 PDF objects out of 1000 (max. 8388607)
+ 146 compressed objects within 2 object streams
  40 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 72 words of extra memory for PDF output out of 10000 (max. 10000000)
 
