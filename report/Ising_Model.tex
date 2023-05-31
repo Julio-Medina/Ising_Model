@@ -150,12 +150,12 @@ Entonces se tiene la siguiente condición de equilibrio llamado principio de bal
 \begin{equation}\label{equi}
 P(y',t)w(y'\rightarrow y)=P(y,t)w(y\rightarrow y')
 \end{equation}
-\subsection{Metodo de Monte Carlo}
+\subsubsection{Metodo de Monte Carlo}
 El estudio de sistemas en equilibrio en mecánica estadística  esta interesado en el calculo de promedios de la forma
 \begin{equation}\label{MCavg}
 \langle A\rangle=\frac{\displaystyle \sum_{C} A(C) \exp(-\beta\mathcal{H})}{\displaystyle\sum_{C} \exp(-\beta\mathcal{H})}
 \end{equation}
-donde  la suma indica que se toman en cuenta todas las posibles configuraciones microscópicas del sistema asociado con el Hamiltoniano $\mathcal{H}$, para el caso del modelo de Ising 2D se tiene un retículo de $N=n\times n$ sitios, esto significa que la suma en \ref{MCavg} se hace sobre $2^N=2^{n^2}$ configuraciones. El hecho que el numero de configuraciones crece como $2^{n^2}$ hace que no sea practico utilizar este tipo de expresión para realizar cálculos numéricos. La solución consiste en realizar promedios sobre un numero mucho mas pequeño de las configuraciones de equilibrio mas representativas  del sistema,
+donde  la suma indica que se toman en cuenta todas las posibles configuraciones microscópicas del sistema asociado con el Hamiltoniano $\mathcal{H}$, para el caso del modelo de Ising 2D se tiene un retículo de $N=n\times n$ sitios, esto significa que la suma en \ref{MCavg} se hace sobre $2^N=2^{n^2}$ configuraciones. El hecho que el numero de configuraciones crece como $2^{n^2}$ hace que no sea práctico utilizar este tipo de expresión para realizar cálculos numéricos. La solución consiste en realizar promedios sobre un numero mucho mas pequeño de las configuraciones de equilibrio mas representativas  del sistema,
 \begin{equation}\label{MCavg2}
 \langle A\rangle=\frac{1}{M}\sum^M_{i=1}A_i
 \end{equation}
@@ -203,6 +203,46 @@ es fácil ver que estos pasos reproducen la prescripción de Metropolis.
 \end{center} 
 \caption{Diagrama de flujo}
 \end{figure}
+
+\subsection{Tiempos de cómputo}
+Para poder describir el tiempo de cómputo de la implementación realizada del método de Monte Carlo con la prescripción de Metropolis se corren distintos tipos de simulaciones para poder analizar el comportamiento del tiempo de cómputo con respecto a la variación de otro parámetro
+\subsubsection{Tamaño del retículo}
+Para poder analizar el comportamiento del tiempo de cómputo en función del tamaño del retículo se hace una simulación para un rango de tamaño de retículos de $N\in[10-500]$ con un intervalo de $10$ entre cada simulación. En la siguiente figura se puede apreciar como el tiempo de cómputo incrementa exponencialmente en función de $N$. Se hace la observación que para se tiene un retículo de $N\times N$, para está simulación el número de iteraciones de Monte Carlo se mantiene fija, $n=10000$
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.64]{time_vrs_lattice_size.png} 
+\end{center} 
+\caption{Tiempo(s) vrs. N}
+\end{figure}
+
+\subsubsection{Temperatura}
+De nuevo para analizar el comportamiento del tiempo de cómputo se realizó una simulación con un tamaño de retículo fijo $N=50$, pero se varia la temperatura en un rango de $T\in[1-100]$, en este caso también se fija el número de iteraciones de Monte Carlo en $n=10000$, se hace la importante observación que en todas las simulaciones se usan unidades de física teórica en las que $K_B=1$
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{time_vrs_T.png} 
+\end{center} 
+\caption{Tiempo(s) vrs. Temperatura}
+\end{figure}
+El tiempo de computo para $n$(número de iteraciones) y $N$(tamaño del retículo) y una temperatura variable se mantiene constante, esto es consistente con la implementación del algoritmo de Monte Carlo para el modelo de Ising.
+Durante esta simulación también se registró como se comporta la magnetización promedio por sitio cuando se hace variar la temperatura, en este caso se puede ver una transición de fase, i.e. se empieza con un material magnetizado que después de una temperatura crítica llega a estar totalmente des-magnetizado, transición ferro-paramagnética.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{M_vrs_T.png} 
+\end{center} 
+\caption{Magnetización vrs. Temperatura}
+\end{figure}
+\subsubsection{Iteraciones de Monte Carlo}
+Otro parámetro de interés para evaluar el tiempo de cómputo es el número de iteraciones de Monte Carlo utilizadas durante la simulación, en este caso se hace variar $n\in [100,10000]$, con un tamaño de retículo fijo $N=50$ y temperatura $T=5$, en este caso el tiempo se cómputo es lineal como se puede apreciar el gráfico
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.6]{time_vrs_MC_iterations.png} 
+\end{center} 
+\caption{Tiempo(s) vrs. no. iteraciones}
+\end{figure}
+
+\section{Resultados}
+
+
 \begin{thebibliography}{99}
 %% La bibliografía se ordena en orden alfabético respecto al apellido del 
 %% autor o autor principal
