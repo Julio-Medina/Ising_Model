@@ -85,6 +85,44 @@ Para resolver el problema de Ising se tiene que encontrar la función de partici
 Z(T,H,N)=\sum_{\{ \sigma_i\}}\exp(-\beta \mathcal{H})
 \end{equation}
 con $\beta=\frac{1}{K_B T}$, $K_B$ es la constante de Boltzman, y $T$ es la temperatura en Kelvins.\\
+\subsection{Transiciones de fase}
+Las transiciones de fase y los fenómenos críticos(\textit{critical phenomena}) están asociados a una gran variedad de sistemas físicos:Fluidos simples y mezclas de fluidos,materiales magnéticos, ferromagnetos, superfluidos, superconductores y otros. La tesis doctoral de van der Waals(1873) fue la primer teoría exitosa para explicar la continuidad de los estados líquidos y gaseosos de la materia. La transición al ferromagnetismo también fue explicada a principios del siglo XX por una teoría fenomenológica propuesta por Pierre Curie y desarrollada por Weiss que está íntimamente relacionada a la teoría de van der Waals. Estas son conocidas como teorías clásicas de transición de fase y todavía se usan para describir algunos aspectos cualitativos de todo tipo de sistemas.\\
+
+Estas teorías clásicas fueron sometidas a un proceso de análisis más riguroso en los años 60´s. Varias cantidades termodinámicas como el calor específico, la compresibilidad y la susceptibilidad magnética presentan un comportamiento peculiar en la llamada región crítica, con divergencias asimptóticas caracterizadas por una colección de exponentes críticos. Rápidamente se reconoció que el comportamiento crítico de las cantidades termodinámicas equivalentes, exhiben una caracterización universal que se puede describir por los bien definidos exponentes críticos.  \\
+\subsubsection{Fenomenología de Landau}
+La teoría de Landau para transiciones de fases continuas se basa en la expansión de la energía libre en términos de las invariantes de los parámetros de orden. Por lo que se asume que la energía libre es una función analítica, incluso en la vecindad de un punto crítico. En muchos casos es relativamente sencillo  encontrar un número aceptable  de parámetros de orden asociados a una transición de fase. El parámetro de orden no es siempre un escalar, puede ser incluso un tensor para sistemas complejos. Generalmente se tiene que $\psi=0$ en la fase con mayor simetría que usualmente se presenta a altas temperaturas en la fase desordenada, y $\psi\neq0$ en la fase menos simétrica, mas ordenada.\\
+Hay varios ejemplos de estos parámetros de orden:
+\begin{itemize}
+\item La transición de liquido-gas, donde $psi$ viene dado por $v_G-v_L$ o por $\rho_L-\rho_G$($v$ es el volumen especifico y $\rho$ es la densidad de partículas)
+\item La transición para-ferromagnética en la cual el parámetro de orden $\psi$ puede ser el vector de magnetización(que se convierte en un escalar para sistema uni-axiales como en el modelo de Ising) en la ausencia de un campo aplicado.
+\item La transición anti-ferromagnética  en la cual el parámetro de orden $\psi$ se puede asociar a la magnetización del sub-retículo.
+\end{itemize}
+La lista no es exhaustiva. Para un fluido puro, el parámetro de orden es un escalar y se puede escribir la expansión
+\begin{equation}
+g(T,p;\psi)=g_0(T,p)+g_1(T,p)\psi+g_2(T,p)\psi^2+g_3(T,p)\psi^3+g_4(T,p)\psi^4+\hdots,
+\end{equation}
+donde los coeficientes $g_n$ son funciones de los campos termodinámicos $T$ y $p$. Para obtener un punto crítico simple, es suficiente que $g_4$ sea positivo, esto garantiza la existencia de un mínimo con respecto a $\psi$, por lo que se omiten términos de orden superior en la expansión de Landau. Debido a que se tiene alguna libertad para escoger $\psi$, siempre es posible eliminar el termino cúbico en la expansión(ver \cite{Salinas}). Por lo que sin perdida de generalidad, se puede escribir la expansión como
+\begin{equation}
+g(T,p;\psi)=A_0(T,p)+A_1(T,p)\psi+A_2(T,p)\psi^2+\psi^4
+\end{equation}
+para tener un mínimo estable, los coeficientes $A_1$ y $A_2$ tienen que ser cero en el punto crítico, sin embargo es importante mencionar que la existencia de dicha expansión no puede darse por darse por sentada, siendo la solución analítica del modelo bidimensional de Ising un conocido contraejemplo.\\
+Para un ferromagneto uniaxial, se tiene una expansión de Landau más simple(debido a la simetría), por lo que la energía libre de Helmholtz se puede escribir como
+\begin{equation}
+f(T,m)f_0(T)+A(T)m^2+B(T)m^4+\hdots
+\end{equation}
+con esto se obtiene
+\begin{equation}
+g(T,H,m)=f_0(T)-H m+A(T)m^2+B(T)m^4+\hdots
+\end{equation}
+En el punto crítico se tiene que $H=0$ y $A(T)=0$, en la vecindad del punto crítico se puede escribir
+\begin{equation}
+A(T)=a(T-T_c)
+\end{equation}
+con $a>0$, $B(T)=b>0$, y $f_0(T)\approx f_0 (T_c)$. Por lo que se puede escribir
+\begin{equation}
+g(T,H,m)=f_0(T_c)-H m+a(T-T_c)m^2+b m^4.
+\end{equation}
+
 \section{Metodología}
 \subsection{Método de Monte Carlo}
 \subsubsection{Ecuación maestra}
@@ -157,7 +195,7 @@ Se presentan a continuación los pasos del método de Monte Carlo y el diagrama 
 \item Si $E$ es positiva se hace el cambio de spin en el sitio indicado, esto es $\sigma_i=-\sigma_i$.
 \item Si $E$ es negativa pero $\exp(-\beta \Delta \mathcal{H})>p_t$, donde $p_t$ es un numero aleatorio entre $0$ y $1$, se cambia al spin, de otra manera se reinicia el ciclo.
 \end{enumerate}
-es fácil ver que estos pasos reproducen la prescripción de Metrópolis.
+es fácil ver que estos pasos reproducen la prescripción de Metropolis.
 \pagebreak
 \begin{figure}[H]
 \begin{center}
@@ -172,11 +210,11 @@ es fácil ver que estos pasos reproducen la prescripción de Metrópolis.
 %% tesis, contenido en la web, etc
 %Las fuentes de consulta se citan en forma organizada y homogénea, tanto de los libros, de los artículos y, en general, de las obras consultadas, que fueron indispensables indicar o referir en el contenido del trabajo.
 
-\bibitem{silvio}Silvio R.A Salinas. \textit{Introduction to Statistical Physics}. Springer. First Edition.
+\bibitem{Salinas}Silvio R.A Salinas. \textit{Introduction to Statistical Physics}. Springer. First Edition.
 
-\bibitem{}R.J. Baxter \textit{Exactly solved models in statistical physics}.Academic Press. First Edition. 
+\bibitem{Baxter}R.J. Baxter \textit{Exactly solved models in statistical physics}.Academic Press. First Edition. 
 
-\bibitem{}R.K. Pathria \textit{Statistical Mechanics}. Elsevier.Third Edition.
+\bibitem{Pathria}R.K. Pathria \textit{Statistical Mechanics}. Elsevier.Third Edition.
 %¨\bibitem{}\textit{Finite Difference method}.\url{https://en.wikipedia.org/wiki/Finite_difference_method}
 
 %\bibitem{Feynman} 
