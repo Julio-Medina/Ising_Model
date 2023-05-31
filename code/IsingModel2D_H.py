@@ -21,8 +21,8 @@ class isingModel(object): # Ising Model object
     def __init__(self,N,iterations,minTemp, maxTemp, JKb, HKb):
         self.N=N#Dimension del reticulo(red) 
         self.iterations=iterations#Numero de iteraciones
-        self.lattice=np.ones([self.N,self.N])#matriz N*N
-        self.initialLattice=np.ones([self.N,self.N])#inital lattice red inicial
+        #self.lattice=[]#np.ones([self.N,self.N])*-1.0#matriz N*N
+        #self.initialLattice=[]#np.ones([self.N,self.N])*-1.0#inital lattice red inicial
         self.minTemp=minTemp
         self.maxTemp=maxTemp
         self.JKb=JKb
@@ -33,8 +33,8 @@ class isingModel(object): # Ising Model object
 
     def setInitialState(self):#establece el estado aleotorio inicial del reticulo (lattice)
         #self.intialLattice=self.lattice=[[random.choice([-1,1]) for x in range(self.N)] for y in range(self.N)]
-        #self.intialLattice=self.lattice=[[-1 for x in range(self.N)] for y in range(self.N)] 
-        self.intialLattice=np.ones([self.N, self.N])*-1.0
+        #self.initialLattice=self.lattice=[[-1.0 for x in range(self.N)] for y in range(self.N)] 
+        self.lattice=self.initialLattice=np.ones([self.N, self.N])*-1.0
         ''' for i in range(self.N):
         for j in range(self.N):
         self.lattice[i][j]='''
@@ -62,7 +62,7 @@ class isingModel(object): # Ising Model object
             for j in range(self.N):
                 energy+=self.nearestNeighborEnergy(i,j)
         
-        energy+=self.lattice.sum()*self.HKb
+        #energy+=self.lattice.sum()*self.HKb
         
         
              
@@ -74,9 +74,9 @@ class isingModel(object): # Ising Model object
         """
         for i in range(self.N):
             for j in range(self.N):
-                M+=self.lattice[i][j]
+                M+=self.lattice[i][j]"""
                 
-        """
+        
         M=self.lattice.sum()
         return M/(self.N**2)
 
@@ -89,20 +89,21 @@ class isingModel(object): # Ising Model object
 
     # runs the Monte Carlo simulation for the lattice at the given parameters
     def runMonteCarlo(self,T):
-        initial_energy=self.latticeEnergy()
-        deltas_E=[initial_energy]
+        #initial_energy=self.latticeEnergy()
+        #deltas_E=[initial_energy]
         
         for i in range(self.iterations):
             randomX=random.randrange(self.N)
             randomY=random.randrange(self.N)
-            energy=-1*self.nearestNeighborEnergy(randomX,randomY)-1*self.lattice[randomX][randomY]*self.HKb
-            #energy=self.latticeEnergy()
-            delta_energy=deltas_E[i]-energy
-            deltas_E.append(delta_energy)
-            if deltas_E[i+1]>0:
+            energy=1*self.nearestNeighborEnergy(randomX,randomY)+1*self.lattice[randomX][randomY]*self.HKb
+            total_energy=self.latticeEnergy()
+            #delta_energy=deltas_E[i]-energy
+            #deltas_E.append(delta_energy)
+            #if deltas_E[i+1]>0:
+            if energy>0:
                 self.lattice[randomX][randomY]*=-1
-            #elif math.exp(energy/(T*self.JKb))>random.random() :
-            elif math.exp(deltas_E[i+1]/(T))>random.random() :
+            elif math.exp(energy/T*self.JKb)>random.random() :
+            #elif math.exp(deltas_E[i+1]/(T))>random.random() :
             #print(deltas_E[i+1])
             #if math.exp(-deltas_E[i+1]/(T))>random.random() :
                 self.lattice[randomX][randomY]*=-1
@@ -116,7 +117,7 @@ class isingModel(object): # Ising Model object
         step=(self.maxTemp-self.minTemp)/950.0
         T=self.minTemp
         while (T<=self.maxTemp):
-            self.lattice=self.intialLattice
+            self.lattice=self.initialLattice.copy()
             self.runMonteCarlo(T)
             Y.append(self.latticeMagnetization())
             X.append(T)            
@@ -138,7 +139,7 @@ class isingModel(object): # Ising Model object
                 
         
         
-#test=isingModel(100,15000,1,20,5,10);
+#test=isingModel(100,15000,1,200,5,0);
 #print(test.lattice)
 '''print(test.nearestNeighborEnergy(0,0))
 print(test.nearestNeighborEnergy(3,0))
@@ -150,7 +151,9 @@ print(test.nearestNeighborEnergy(3,3))'''
 #test.runMonteCarlo(100)
 #print(test.lattice)
 #print(test.latticeMagnetization())
+#init_lattice=test.lattice
 #test.plotMvrsT()     
+#final_lattice=test.lattice
 #print('Finished')
 '''plt.arrow(10,10,10,10)
 plt.draw()

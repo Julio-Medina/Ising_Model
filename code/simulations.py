@@ -32,17 +32,19 @@ def time_size_simulation(min_lattice_size=10,
     size_range=range(min_lattice_size, max_lattice_size+step,step)
     for N in size_range:
         ising_model=isingModel(N, iterations, minTemp, maxTemp ,JKb, HKb )
-        initial_magnetization=ising_model.latticeMagnetization()
+        #initial_magnetization=ising_model.latticeMagnetization()
         start_time=time.time()
         ising_model.runMonteCarlo(fixed_T)
-        final_magnetizations.append(ising_model.latticeMagnetization)
+        final_magnetizations.append(ising_model.latticeMagnetization())
         end_time=time.time()
         delta_time=end_time-start_time
         times.append(delta_time)
     return list(size_range), times, final_magnetizations
-
+"""
 lattice_size, times, magnetization=time_size_simulation(fixed_T=1,max_lattice_size=500)
-plt.plot(lattice_size,times)
+plt.xlabel('Tamaño del retículo')
+plt.ylabel('Tiempo de cómputo')
+plt.plot(lattice_size,times)"""
 
 
         
