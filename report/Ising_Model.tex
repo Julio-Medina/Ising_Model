@@ -53,40 +53,9 @@ En mecánica estadística el Modelo de Ising para la modelación teórica de un 
 
 \normalsize
 \section{Introducción}
-\subsection{Modelo de Ising}
-El modelo de Ising considera las interacciones ferromagnéticas entre las moléculas de un material como un modelo discreto, esto consiste en asignar un valor discreto a la orientación relativa del momento dipolar magnético(spin), se asigna $+1$ a una orientación paralela al eje $y$ en el retículo formado por las posiciones discretizadas de las moléculas. ver fig. 1. y se le asigna $-1$ a la orientación anti-paralela. 
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[scale=0.4]{LatticeIsing.png} 
-\end{center} 
-\caption{Retículo de spins}
-\end{figure}
-
-Se considera en el análisis la interacción entre spines vecinos $\sigma_{i}$, donde $\sigma_i=\pm1$ representa el spin en la  posición $(x,y)$ del retículo, la fuerza de la interacción entre vecinos se rige por una constante $J$ de modo que el Hamiltoniano del sistema se puede escribir de la siguiente manera.
-\begin{equation}
-\label{H1}
-\mathcal{H}=-J\sum_{\langle i j\rangle}\sigma_i \sigma_j-H\sum_{i=1}^{N}\sigma_i
-\end{equation}
-donde $H$ es un campo magnético externo aplicado a la región donde se encuentra el retículo de moléculas ,$N$ es el numero total de moléculas en el retículo y la energía $J$ se puede interpretar como un parámetro cuántico de interacción electrostática, en la primera sumatoria se hace la observación que $\langle i j\rangle$ significa la suma de las interacciones de los vecinos más cercanos(vecinos próximos), estos son por ejemplo si se toma a la posición $(x,y)$ sus vecinos serian ${(x,y+1),(x,y-1),(x-1,y),(x+1,y)}$, los vecinos se pueden ver en color azul en la fig 2. y la posición $(x,y)$ se aprecia en color rojo. El primer termino de \ref{H1} representa la energías de interacción introducidas para llevar a un estado ferromagnético ordenado, el segundo termino representa la interacción entre el campo magnético aplicado $H$ y los spines del sistema está interacción es de carácter puramente paramagnético.
-\begin{figure}[H]
-\begin{center}
-\includegraphics[scale=0.4]{Neighbor.png} 
-\end{center} 
-\caption{Vecinos mas cercanos}
-\end{figure}
-Tomando el caso en le que $H=0$ la ecuación \ref{H1} se convierte en 
-\begin{equation}
-\label{H2}
-\mathcal{H}=-J\sum_{\langle i j\rangle}\sigma_i \sigma_j
-\end{equation}
-Para resolver el problema de Ising se tiene que encontrar la función de partición canónica
-\begin{equation}\label{partition}
-Z(T,H,N)=\sum_{\{ \sigma_i\}}\exp(-\beta \mathcal{H})
-\end{equation}
-con $\beta=\frac{1}{K_B T}$, $K_B$ es la constante de Boltzman, y $T$ es la temperatura en Kelvins.\\
+El modelo de Ising es el arquetipo para modelar el comportamiento de materiales ferromagnéticos y las transiciones de fase que puede darse en este tipo de materiales, particularmente el fenómeno de transición ferro-paramagnética. Esto se puede observar facilmente al tomar una pieza de hierro previamente magnetizado por algún campo magnético suficientemente grande para generar un imán temporal, al acercar este pedazo imantado a una fuente de calor se puede observar como rápidamente se pierden las propiedades magnéticas.
 \subsection{Transiciones de fase}
-Las transiciones de fase y los fenómenos críticos(\textit{critical phenomena}) están asociados a una gran variedad de sistemas físicos:Fluidos simples y mezclas de fluidos,materiales magnéticos, ferromagnetos, superfluidos, superconductores y otros. La tesis doctoral de van der Waals(1873) fue la primer teoría exitosa para explicar la continuidad de los estados líquidos y gaseosos de la materia. La transición al ferromagnetismo también fue explicada a principios del siglo XX por una teoría fenomenológica propuesta por Pierre Curie y desarrollada por Weiss que está íntimamente relacionada a la teoría de van der Waals. Estas son conocidas como teorías clásicas de transición de fase y todavía se usan para describir algunos aspectos cualitativos de todo tipo de sistemas.\\
+Las transiciones de fase y los fenómenos críticos(\textit{critical phenomena}) están asociados a una gran variedad de sistemas físicos: Fluidos simples y mezclas de fluidos, materiales magnéticos, ferromagnetos, superfluidos, superconductores y otros. La tesis doctoral de van der Waals(1873) fue la primer teoría exitosa para explicar la continuidad de los estados líquidos y gaseosos de la materia. La transición al ferromagnetismo también fue explicada a principios del siglo XX por una teoría fenomenológica propuesta por Pierre Curie y desarrollada por Weiss que está íntimamente relacionada a la teoría de van der Waals. Estas son conocidas como teorías clásicas de transición de fase y todavía se usan para describir algunos aspectos cualitativos de todo tipo de sistemas.\\
 
 Estas teorías clásicas fueron sometidas a un proceso de análisis más riguroso en los años 60´s. Varias cantidades termodinámicas como el calor específico, la compresibilidad y la susceptibilidad magnética presentan un comportamiento peculiar en la llamada región crítica, con divergencias asimptóticas caracterizadas por una colección de exponentes críticos. Rápidamente se reconoció que el comportamiento crítico de las cantidades termodinámicas equivalentes, exhiben una caracterización universal que se puede describir por los bien definidos exponentes críticos.  \\
 \subsubsection{Fenomenología de Landau}
@@ -122,6 +91,45 @@ con $a>0$, $B(T)=b>0$, y $f_0(T)\approx f_0 (T_c)$. Por lo que se puede escribir
 \begin{equation}
 g(T,H,m)=f_0(T_c)-H m+a(T-T_c)m^2+b m^4.
 \end{equation}
+
+\subsection{Modelo de Ising}
+La mayoría de experimentos en la vecindad de los puntos críticos indica que los exponentes críticos asumen valores universales, que difieren bastante de las teorías clásicas(un ejemplo se presento en la fenomenología de Landau). Ahora se ha reconocido que los valores de los exponentes críticos dependen de solo unos cuantos ingredientes:
+\begin{itemize}
+\item La dimensión de los sistemas físicos.
+\item La dimensión de los parámetros de orden. Para ferromagnetos uniaxiales el parámetro de orden es un escalar.
+\item El rango de las interacciones microscópicas.
+\end{itemize}
+Debido al comportamiento universal de los exponentes críticos, es suficiente analizar sistemas simples más no triviales como es el caso del modelo de Ising. El modelo de Ising considera las interacciones ferromagnéticas entre las moléculas de un material como un modelo discreto, esto consiste en asignar un valor discreto a la orientación relativa del momento dipolar magnético(spin), se asigna $+1$ a una orientación paralela al eje $y$ en el retículo formado por las posiciones discretizadas de las moléculas. ver fig. 1. y se le asigna $-1$ a la orientación anti-paralela. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{LatticeIsing.png} 
+\end{center} 
+\caption{Retículo de spins}
+\end{figure}
+
+Se considera en el análisis la interacción entre spines vecinos $\sigma_{i}$, donde $\sigma_i=\pm1$ representa el spin en la  posición $(x,y)$ del retículo, la fuerza de la interacción entre vecinos se rige por una constante $J$ de modo que el Hamiltoniano del sistema se puede escribir de la siguiente manera.
+\begin{equation}
+\label{H1}
+\mathcal{H}=-J\sum_{\langle i j\rangle}\sigma_i \sigma_j-H\sum_{i=1}^{N}\sigma_i
+\end{equation}
+donde $H$ es un campo magnético externo aplicado a la región donde se encuentra el retículo de moléculas ,$N$ es el numero total de moléculas en el retículo y la energía $J$ se puede interpretar como un parámetro cuántico de interacción electrostática, en la primera sumatoria se hace la observación que $\langle i j\rangle$ significa la suma de las interacciones de los vecinos más cercanos(vecinos próximos), estos son por ejemplo si se toma a la posición $(x,y)$ sus vecinos serian ${(x,y+1),(x,y-1),(x-1,y),(x+1,y)}$, los vecinos se pueden ver en color azul en la fig 2. y la posición $(x,y)$ se aprecia en color rojo. El primer termino de \ref{H1} representa la energías de interacción introducidas para llevar a un estado ferromagnético ordenado, el segundo termino representa la interacción entre el campo magnético aplicado $H$ y los spines del sistema está interacción es de carácter puramente paramagnético.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{Neighbor.png} 
+\end{center} 
+\caption{Vecinos mas cercanos}
+\end{figure}
+Tomando el caso en le que $H=0$ la ecuación \ref{H1} se convierte en 
+\begin{equation}
+\label{H2}
+\mathcal{H}=-J\sum_{\langle i j\rangle}\sigma_i \sigma_j
+\end{equation}
+Para resolver el problema de Ising se tiene que encontrar la función de partición canónica
+\begin{equation}\label{partition}
+Z(T,H,N)=\sum_{\{ \sigma_i\}}\exp(-\beta \mathcal{H})
+\end{equation}
+con $\beta=\frac{1}{K_B T}$, $K_B$ es la constante de Boltzman, y $T$ es la temperatura en Kelvins.\\
 
 \section{Metodología}
 \subsection{Método de Monte Carlo}
@@ -175,7 +183,7 @@ Se escogen probabilidades  que satisfacen
 \frac{w(y\rightarrow y')}{w(y'\rightarrow y)}=\exp (-\beta \Delta \mathcal{H})
 \end{equation}
 donde $\Delta\mathcal{H}=\mathcal{H}(y')-\mathcal{H}(y)$ es la diferencia de energías entre las configuraciones $y$ y $y'$.\\
-Otras dos probabilidades de transición utilizadas en el las simulaciones de monte Carlo son el algoritmo de Glauber y la prescripción de Metrópolis, en esta simulación se ha escogido a la prescripción de Metrópolis,
+Otras dos probabilidades de transición utilizadas en el las simulaciones de monte Carlo son el algoritmo de Glauber y la prescripción de Metropolis, en esta simulación se ha escogido a la prescripción de Metropolis,
 \begin{equation}
 w(y\rightarrow y')=\left\{
         \begin{array}{ll}
@@ -242,6 +250,8 @@ Otro parámetro de interés para evaluar el tiempo de cómputo es el número de 
 
 \section{Resultados}
 
+\section{Conclusiones}
+El método de Monte Carlo es una buena opción para encontrar el comportamiento aproximado del modelo de Ising, a través de la prescripción de Metropolis. En general se observaron las transiciones de fase esperadas, de un estado ferromagnético a uno paramagnético.
 
 \begin{thebibliography}{99}
 %% La bibliografía se ordena en orden alfabético respecto al apellido del 
