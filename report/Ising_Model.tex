@@ -53,7 +53,7 @@ En mecánica estadística el Modelo de Ising para la modelación teórica de un 
 
 \normalsize
 \section{Introducción}
-El modelo de Ising es el arquetipo para modelar el comportamiento de materiales ferromagnéticos y las transiciones de fase que puede darse en este tipo de materiales, particularmente el fenómeno de transición ferro-paramagnética. Esto se puede observar facilmente al tomar una pieza de hierro previamente magnetizado por algún campo magnético suficientemente grande para generar un imán temporal, al acercar este pedazo imantado a una fuente de calor se puede observar como rápidamente se pierden las propiedades magnéticas.
+El modelo de Ising es el arquetipo para modelar el comportamiento de materiales ferromagnéticos y las transiciones de fase que puede darse en este tipo de materiales, particularmente el fenómeno de transición para-ferromagnética. Esto se puede observar fácilmente al tomar una pieza de hierro previamente magnetizado por algún campo magnético suficientemente grande para generar un imán temporal, al acercar este pedazo imantado a una fuente de calor se puede observar como rápidamente se pierden las propiedades magnéticas.
 \subsection{Transiciones de fase}
 Las transiciones de fase y los fenómenos críticos(\textit{critical phenomena}) están asociados a una gran variedad de sistemas físicos: Fluidos simples y mezclas de fluidos, materiales magnéticos, ferromagnetos, superfluidos, superconductores y otros. La tesis doctoral de van der Waals(1873) fue la primer teoría exitosa para explicar la continuidad de los estados líquidos y gaseosos de la materia. La transición al ferromagnetismo también fue explicada a principios del siglo XX por una teoría fenomenológica propuesta por Pierre Curie y desarrollada por Weiss que está íntimamente relacionada a la teoría de van der Waals. Estas son conocidas como teorías clásicas de transición de fase y todavía se usan para describir algunos aspectos cualitativos de todo tipo de sistemas.\\
 
@@ -93,7 +93,7 @@ g(T,H,m)=f_0(T_c)-H m+a(T-T_c)m^2+b m^4.
 \end{equation}
 
 \subsection{Modelo de Ising}
-La mayoría de experimentos en la vecindad de los puntos críticos indica que los exponentes críticos asumen valores universales, que difieren bastante de las teorías clásicas(un ejemplo se presento en la fenomenología de Landau). Ahora se ha reconocido que los valores de los exponentes críticos dependen de solo unos cuantos ingredientes:
+La mayoría de experimentos en la vecindad de los puntos críticos indican que los exponentes críticos asumen valores universales, que difieren bastante de las teorías clásicas(un ejemplo se presento en la fenomenología de Landau). Ahora se ha reconocido que los valores de los exponentes críticos dependen de solo unos cuantos ingredientes:
 \begin{itemize}
 \item La dimensión de los sistemas físicos.
 \item La dimensión de los parámetros de orden. Para ferromagnetos uniaxiales el parámetro de orden es un escalar.
@@ -129,12 +129,36 @@ Para resolver el problema de Ising se tiene que encontrar la función de partici
 \begin{equation}\label{partition}
 Z(T,H,N)=\sum_{\{ \sigma_i\}}\exp(-\beta \mathcal{H})
 \end{equation}
-con $\beta=\frac{1}{K_B T}$, $K_B$ es la constante de Boltzman, y $T$ es la temperatura en Kelvins.\\
+con $\beta=\frac{1}{K_B T}$, $K_B$ es la constante de Boltzman, y $T$ es la temperatura en Kelvins. De esta funcion de particion se tiene que la energia libre por sitio viene dada por
+\begin{equation}
+g=g(T,H)=\lim_{n\to \infty}\Bigg[-\frac{1}{\beta N}\ln Z_N\Bigg]
+\end{equation}
+En una dimensión es relativamente sencillo obtener una expresión para está energía libre, por ejemplo por medio la técnica de matrices de transferencia, que también puede usarse en dimensiones mayores, para obtener una solución a la cadena de Ising. Sin embargo está solución es engañosa como fue demostrado por Ising(1925) ya que al ser una función analítica de $T$ y $H$ prohíbe la existencia de magnetización espontánea y de cualquier transición de fase.\\.
+
+Varias técnicas de aproximación han sido desarrolladas para resolver el modelo de Ising en 2 y 3 dimensiones, algunas de ellas bastante sencillas y útiles que conducen a resultados cualitativos razonables para diagramas de fase. Como se mencionó, las transiciones de fase se asocian al comportamiento no-analítico de la energía libre en el límite termodinámico, como consecuencia se debe tener cautela al utilizar truncaciones o expansiones perturbativas alrededor del punto crítico.\\
+Lars Onsanger(ver \cite{Pathria}, \cite{Onsanger}, \cite{Baxter}) encontró una solución analítica analítica al modelo de Ising para un retículo cuadrado, con iteraciones de vecinos próximos en la ausencia de campo externo($H=0$), \ref{H2}. Para $T\to T_c$ el calor específico diverge acuerdo a la forma logarítmica asimptótica
+\begin{equation}
+c{H=0}\sim \ln|T-T_c|,
+\end{equation}
+con una temperatura crítica bien definida
+\begin{equation}\label{Tc}
+T_c=\frac{2J}{K_B \ln(1+\sqrt{2})}
+\end{equation}
+\subsection{Solución Exacta Modelo de Ising en 1D}
+En una dimensión se tiene que el Hamiltoniano \ref{H1} se convierte en 
+\begin{equation}
+\mathcal{H}=-J\sum_{i=1}^{N}\sigma_i\sigma_{i+1}-H\sum_limits_{i=1}^{N}\sigma_i
+\end{equation}
+La función de partición viene dada por 
+\begin{equation}
+Z_N=\sum_{\{\sigma_i \}}\exp\Bigg[ K+\sum_{i=1}^{N}\sigma_i\sigma_{i+1}+\frac{L}{2}\sum_{i=1}^{N}(\sigma_i+\sigma_{i+1}) \Bigg],
+\end{equation}
+donde $K=\beta J$, $L=\beta H$ y el segundo término se ha reescrito tomando ventaja de una forma más simétrica, por conveniencia se toman condiciones de frontera periódicas, i.e. $\sigma_{N+1}=\sigma_1$
 
 \section{Metodología}
 \subsection{Método de Monte Carlo}
 \subsubsection{Ecuación maestra}
-Se introduce lo que se conoce como ecuación maestra(ver \cite{silvio}) para la evolución temporal de procesos estocásticos Markovianos. Si $P(x,t)$ es la probabilidad de encontrar un sistema en el estado microscópico $y$, en el tiempo $t$. Derivando esta probabilidad se tiene
+Se introduce lo que se conoce como ecuación maestra(ver \cite{Silvio}) para la evolución temporal de procesos estocásticos Markovianos. Si $P(x,t)$ es la probabilidad de encontrar un sistema en el estado microscópico $y$, en el tiempo $t$. Derivando esta probabilidad se tiene
 \begin{equation}
 \frac{\partial}{\partial t}P(y,t)=T_0-T_f
 \end{equation}
@@ -203,7 +227,8 @@ Se presentan a continuación los pasos del método de Monte Carlo y el diagrama 
 \item Si $E$ es positiva se hace el cambio de spin en el sitio indicado, esto es $\sigma_i=-\sigma_i$.
 \item Si $E$ es negativa pero $\exp(-\beta \Delta \mathcal{H})>p_t$, donde $p_t$ es un numero aleatorio entre $0$ y $1$, se cambia al spin, de otra manera se reinicia el ciclo.
 \end{enumerate}
-es fácil ver que estos pasos reproducen la prescripción de Metropolis.
+%es fácil ver que estos pasos reproducen la prescripción de Metropolis.
+con estos pasos se hace una simulación de MC con la prescripción de Metropolis.
 \pagebreak
 \begin{figure}[H]
 \begin{center}
@@ -232,7 +257,7 @@ De nuevo para analizar el comportamiento del tiempo de cómputo se realizó una 
 \caption{Tiempo(s) vrs. Temperatura}
 \end{figure}
 El tiempo de computo para $n$(número de iteraciones) y $N$(tamaño del retículo) y una temperatura variable se mantiene constante, esto es consistente con la implementación del algoritmo de Monte Carlo para el modelo de Ising.
-Durante esta simulación también se registró como se comporta la magnetización promedio por sitio cuando se hace variar la temperatura, en este caso se puede ver una transición de fase, i.e. se empieza con un material magnetizado que después de una temperatura crítica llega a estar totalmente des-magnetizado, transición ferro-paramagnética.
+Durante esta simulación también se registró como se comporta la magnetización promedio por sitio cuando se hace variar la temperatura, en este caso se puede ver una transición de fase, i.e. se empieza con un material magnetizado que después de una temperatura crítica llega a estar totalmente desmagnetizado, transición ferro-paramagnética.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.3]{M_vrs_T.png} 
@@ -249,9 +274,45 @@ Otro parámetro de interés para evaluar el tiempo de cómputo es el número de 
 \end{figure}
 
 \section{Resultados}
+Para poder evaluar el comportamiento del algoritmo de Monte Carlo se puede usar la magnetización promedio, en este caso es interesante ver como el comportamiento del parámetro $J$ que mide describe como se comportan las interacciones entre spins y $H$ la intensidad del campo magnético externo aplicado en el Hamiltoniano \ref{H1}, afectan en la simulación numérica del modelo de Ising, también es de interés ver como $J/H$ afecta el comportamiento en general .\\
+Para el caso en el que $H=0$ se tiene el Hamiltoniano \ref{H2} en este caso cuando no hay mas interacción que la que se tiene por los efectos entre spins, para este caso se hace una simulación con $J=1$ el tamaño del retículo es $N=50$ es decir que se tienen $N\times N=250$ sitios, la temperatura varia en un rango $T\in[0.1,10]$ y se tienen $n=10000$ iteraciones de Monte Carlo, se escoge a estado aleatorio del retículo como el estado en el que todos los spins tiene valor $\sigma_i=-1$ es decir que el material ferromagnético esta totalmente magnetizado.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.6]{PlotMvT_sim1.png} 
+\end{center} 
+\caption{Magnetización vrs. Temperatura}
+\end{figure}
+En este caso se puede observar claramente como después de cierta temperatura crítica se observa una transición de fase en el material ferromagnético, una vez alcanzando el equilibrio solo se tienen pequeñas fluctuaciones alrededor de una una magnetización $M=0$.
+Para las mismas condiciones que en el caso anterior pero con la diferencia que ahora se tiene el estado aleaotorio escogido para iniciar la simulación es en el que todos los spins $\sigma_i=+1$
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.6]{PlotMvT_sim2.png} 
+\end{center} 
+\caption{Magnetización vrs. Temperatura}
+\end{figure}
+se obtiene el resultado esperado, se inicia con un material ferromagnético magnetizado que tiene una transición a un estado sin propiedades magnéticas.\\
+Para el caso en el $J/H=1$ y se empieza en el estado en el que todos los spins $\sigma_i=+1$ se obtiene el siguiente resultado
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.6]{PlotMvT_sim3.png} 
+\end{center} 
+\caption{Magnetización vrs. Temperatura}
+\end{figure}
+En este caso se puede ver claramente la influencia del campo magnético externo $H$, ya que el sistema tiende a alinearse con este para después empezar a pasar totalmente al desorden característico de la transición de fase. En el repositorio de \texttt{GitHub} \url{https://github.com/Julio-Medina/Ising_Model/tree/main} se pueden encontrar animaciones de estos procesos.\\
+
+En el caso en que $J/H=\frac{1}{10}$ se obtiene el siguiente resultado en el que $T\in[0.1,50]$ 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.6]{PlotMvT_sim4.png} 
+\end{center} 
+\caption{Magnetización vrs. Temperatura}
+\end{figure}
+En este caso también se puede ver el efecto que tiene $H\neq0>J$ de incrementar la temperatura crítica $T_c$ por lo que se necesita simular el sistema a mayores temperaturas para ver la transición de fase, es importante notar que en este caso la temperatura $T_c$ tiene un incremento aproximado de un factor de $10$, esto es consistente con la solución analítica del modelo de Ising \ref{Tc}.
+
+
 
 \section{Conclusiones}
-El método de Monte Carlo es una buena opción para encontrar el comportamiento aproximado del modelo de Ising, a través de la prescripción de Metropolis. En general se observaron las transiciones de fase esperadas, de un estado ferromagnético a uno paramagnético.
+El método de Monte Carlo es una buena opción para encontrar el comportamiento aproximado del modelo de Ising, a través de la prescripción de Metropolis. En general se observaron las transiciones de fase esperadas, de un estado ferromagnético a uno paramagnético, ver figuras
 
 \begin{thebibliography}{99}
 %% La bibliografía se ordena en orden alfabético respecto al apellido del 
@@ -260,9 +321,11 @@ El método de Monte Carlo es una buena opción para encontrar el comportamiento 
 %% tesis, contenido en la web, etc
 %Las fuentes de consulta se citan en forma organizada y homogénea, tanto de los libros, de los artículos y, en general, de las obras consultadas, que fueron indispensables indicar o referir en el contenido del trabajo.
 
+
+\bibitem{Baxter}R.J. Baxter \textit{Exactly solved models in statistical physics}.Academic Press. First Edition.
 \bibitem{Salinas}Silvio R.A Salinas. \textit{Introduction to Statistical Physics}. Springer. First Edition.
 
-\bibitem{Baxter}R.J. Baxter \textit{Exactly solved models in statistical physics}.Academic Press. First Edition. 
+\bibitem{Onsanger} Lars Onsanger. \textit{Crystal Statistics. I. A Two-Dimensional Model with an Order-Disorder Transition}. Phys. Rev 65, 117, 1944. \url{https://doi.org/10.1103/PhysRev.65.117}
 
 \bibitem{Pathria}R.K. Pathria \textit{Statistical Mechanics}. Elsevier.Third Edition.
 %¨\bibitem{}\textit{Finite Difference method}.\url{https://en.wikipedia.org/wiki/Finite_difference_method}
