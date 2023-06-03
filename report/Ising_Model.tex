@@ -63,7 +63,7 @@ La teoría de Landau para transiciones de fases continuas se basa en la expansi�
 Hay varios ejemplos de estos parámetros de orden:
 \begin{itemize}
 \item La transición de liquido-gas, donde $psi$ viene dado por $v_G-v_L$ o por $\rho_L-\rho_G$($v$ es el volumen especifico y $\rho$ es la densidad de partículas)
-\item La transición para-ferromagnética en la cual el parámetro de orden $\psi$ puede ser el vector de magnetización(que se convierte en un escalar para sistema uni-axiales como en el modelo de Ising) en la ausencia de un campo aplicado.
+\item La transición para-ferromagnética en la cual el parámetro de orden $\psi$ puede ser el vector de magnetización(que se convierte en un escalar para sistema uniaxiales como en el modelo de Ising) en la ausencia de un campo aplicado.
 \item La transición anti-ferromagnética  en la cual el parámetro de orden $\psi$ se puede asociar a la magnetización del sub-retículo.
 \end{itemize}
 La lista no es exhaustiva. Para un fluido puro, el parámetro de orden es un escalar y se puede escribir la expansión
@@ -113,7 +113,7 @@ Se considera en el análisis la interacción entre spines vecinos $\sigma_{i}$, 
 \label{H1}
 \mathcal{H}=-J\sum_{\langle i j\rangle}\sigma_i \sigma_j-H\sum_{i=1}^{N}\sigma_i
 \end{equation}
-donde $H$ es un campo magnético externo aplicado a la región donde se encuentra el retículo de moléculas ,$N$ es el numero total de moléculas en el retículo y la energía $J$ se puede interpretar como un parámetro cuántico de interacción electrostática, en la primera sumatoria se hace la observación que $\langle i j\rangle$ significa la suma de las interacciones de los vecinos más cercanos(vecinos próximos), estos son por ejemplo si se toma a la posición $(x,y)$ sus vecinos serian ${(x,y+1),(x,y-1),(x-1,y),(x+1,y)}$, los vecinos se pueden ver en color azul en la fig 2. y la posición $(x,y)$ se aprecia en color rojo. El primer termino de \ref{H1} representa la energías de interacción introducidas para llevar a un estado ferromagnético ordenado, el segundo termino representa la interacción entre el campo magnético aplicado $H$ y los spines del sistema está interacción es de carácter puramente paramagnético.
+donde $H$ es un campo magnético externo aplicado a la región donde se encuentra el retículo de moléculas ,$N$ es el numero total de moléculas en el retículo y la energía $J$ se puede interpretar como un parámetro cuántico de interacción electrostática, en la primera sumatoria se hace la observación que $\langle i j\rangle$ significa la suma de las interacciones de los vecinos más cercanos(vecinos próximos), estos son por ejemplo si se toma a la posición $(x,y)$ sus vecinos serian ${(x,y+1),(x,y-1),(x-1,y),(x+1,y)}$, los vecinos se pueden ver en color azul en la fig 2. y la posición $(x,y)$ se aprecia en color rojo. El primer termino de \ref{H1} representa la energías de interacción introducidas para llevar a un estado ferromagnético ordenado, el segundo termino representa la interacción entre el campo magnético aplicado $H$ y los spins del sistema está interacción es de carácter puramente paramagnético.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.4]{Neighbor.png} 
@@ -129,14 +129,14 @@ Para resolver el problema de Ising se tiene que encontrar la función de partici
 \begin{equation}\label{partition}
 Z(T,H,N)=\sum_{\{ \sigma_i\}}\exp(-\beta \mathcal{H})
 \end{equation}
-con $\beta=\frac{1}{K_B T}$, $K_B$ es la constante de Boltzman, y $T$ es la temperatura en Kelvins. De esta funcion de particion se tiene que la energia libre por sitio viene dada por
+con $\beta=\frac{1}{K_B T}$, $K_B$ es la constante de Boltzman, y $T$ es la temperatura en Kelvins. De esta función de partición se tiene que la energía libre por sitio viene dada por
 \begin{equation}
 g=g(T,H)=\lim_{n\to \infty}\Bigg[-\frac{1}{\beta N}\ln Z_N\Bigg]
 \end{equation}
 En una dimensión es relativamente sencillo obtener una expresión para está energía libre, por ejemplo por medio la técnica de matrices de transferencia, que también puede usarse en dimensiones mayores, para obtener una solución a la cadena de Ising. Sin embargo está solución es engañosa como fue demostrado por Ising(1925) ya que al ser una función analítica de $T$ y $H$ prohíbe la existencia de magnetización espontánea y de cualquier transición de fase.\\.
 
-Varias técnicas de aproximación han sido desarrolladas para resolver el modelo de Ising en 2 y 3 dimensiones, algunas de ellas bastante sencillas y útiles que conducen a resultados cualitativos razonables para diagramas de fase. Como se mencionó, las transiciones de fase se asocian al comportamiento no-analítico de la energía libre en el límite termodinámico, como consecuencia se debe tener cautela al utilizar truncaciones o expansiones perturbativas alrededor del punto crítico.\\
-Lars Onsanger(ver \cite{Pathria}, \cite{Onsanger}, \cite{Baxter}) encontró una solución analítica analítica al modelo de Ising para un retículo cuadrado, con iteraciones de vecinos próximos en la ausencia de campo externo($H=0$), \ref{H2}. Para $T\to T_c$ el calor específico diverge acuerdo a la forma logarítmica asimptótica
+Varias técnicas de aproximación han sido desarrolladas para resolver el modelo de Ising en 2 y 3 dimensiones, algunas de ellas bastante sencillas y útiles que conducen a resultados cualitativos razonables para diagramas de fase. Como se mencionó, las transiciones de fase se asocian al comportamiento no-analítico de la energía libre en el límite termodinámico, como consecuencia se debe tener cautela al utilizar truncamientos o expansiones perturbativas alrededor del punto crítico.\\
+Lars Onsanger(ver  \cite{Onsanger}, \cite{Pathria}) encontró una solución analítica analítica al modelo de Ising para un retículo cuadrado, con iteraciones de vecinos próximos en la ausencia de campo externo($H=0$), \ref{H2}. Para $T\to T_c$ el calor específico diverge de acuerdo a la forma logarítmica asimptótica
 \begin{equation}
 c{H=0}\sim \ln|T-T_c|,
 \end{equation}
@@ -144,17 +144,72 @@ con una temperatura crítica bien definida
 \begin{equation}\label{Tc}
 T_c=\frac{2J}{K_B \ln(1+\sqrt{2})}
 \end{equation}
-\subsection{Solución Exacta Modelo de Ising en 1D}
+Aquí se hace un breve presentación de la solución exacta en 1D, en Baxter(ver \cite{Baxter}) se puede hallar métodos de aproximación y una solución en el retículo de Bethe.
+\subsection{Solución exacta del Modelo de Ising en 1D}
 En una dimensión se tiene que el Hamiltoniano \ref{H1} se convierte en 
 \begin{equation}
-\mathcal{H}=-J\sum_{i=1}^{N}\sigma_i\sigma_{i+1}-H\sum_limits_{i=1}^{N}\sigma_i
+\mathcal{H}=-J\sum_{i=1}^{N}\sigma_i\sigma_{i+1}-H\sum_{i=1}^{N}\sigma_i
 \end{equation}
 La función de partición viene dada por 
 \begin{equation}
 Z_N=\sum_{\{\sigma_i \}}\exp\Bigg[ K+\sum_{i=1}^{N}\sigma_i\sigma_{i+1}+\frac{L}{2}\sum_{i=1}^{N}(\sigma_i+\sigma_{i+1}) \Bigg],
 \end{equation}
-donde $K=\beta J$, $L=\beta H$ y el segundo término se ha reescrito tomando ventaja de una forma más simétrica, por conveniencia se toman condiciones de frontera periódicas, i.e. $\sigma_{N+1}=\sigma_1$
-
+donde $K=\beta J$, $L=\beta H$ y el segundo término se ha reescrito tomando ventaja de una forma más simétrica, por conveniencia se toman condiciones de frontera periódicas, i.e. $\sigma_{N+1}=\sigma_1$. Es conveniente escribir a la función de partición como 
+\begin{equation}\label{canonical_partition_fucntion}
+Z_N=\sum_{\sigma_1,\sigma_2,\hdots,\sigma_N}\prod^N_{i=1}T(\sigma_i, \sigma_{i+1})
+\end{equation}
+donde
+\begin{equation}
+T(\sigma_i,\sigma_{i+1})=\exp \Big[  K\sigma_i\sigma_{i+1}+\frac{L}{2}(\sigma_i+\sigma_{i+1}) \Big]
+\end{equation}
+La última expresión puede ser expresada como una matriz de $2\times 2$, cuyos indices son las variables de spin $\sigma_i\pm 1$ y $\sigma_{i+1}\pm 1$. Se define lo que se conoce como \textit{matriz de transferencia},
+\begin{equation}
+\mathbf{T}=
+\begin{pmatrix}
+\,T(+,+)\, &\, T(+,-)\,\\
+\,T(-,+)\, &\, T(-,-)\,
+\end{pmatrix}=
+\begin{pmatrix}
+\,\exp(K+L)\, &\,\exp(-K)\,\\
+\,\exp(-K)\, &\, \exp(K-L)\,
+\end{pmatrix}
+\end{equation}
+usando el formalismo matricial(ver \cite{Silvio}, \cite{Pathria}) se puede expresar la función de partición canónica \ref{canonical_partition_fucntion} como la traza de un producto de $N$ matrices de transferencia
+\begin{equation}
+Z_N=\text{Tr}(\mathbf{T})^N.
+\end{equation}
+Con la observación que la matriz de transferencia es simétrica puede ser diagonalizada por una transformación unitaria
+\begin{equation*}
+\mathbf{U}\mathbf{T}\mathbf{U}^{-1}=\mathbf{D}
+\end{equation*}
+donde $\mathbf{U}^{-1}=\mathbf{U}^\dagger$ y $\mathbf{D}$ es una matriz diagonal, con esto es posible expresar a la función de partición canónica en términos de las valores propios de la matriz de transferencia
+\begin{equation}
+Z_N=\text{Tr}(\mathbf{U}^{-1}\mathbf{D}\mathbf{U})^N=\text{Tr}(\mathbf{D})^N=\lambda_1^N +\lambda_2^N
+\end{equation}
+los valores propios, que vienen de la ecuación propia o secular $\text{det}(\mathbf{T}-\lambda \mathbf{I})=0$, son
+\begin{equation}\label{eigen_values}
+\lambda_{1,2}=e^K \cosh L \pm \big[ e^{2K} \cosh^2L-2\sinh(2L)\big]^{1/2}
+\end{equation}
+Estos valores propios son siempre positivos y $\lambda_1>\lambda_2$, con excepción del punto trivial $T=H=0$. Sin presencia de campo externo, $L=0$ se obtiene
+\begin{equation}
+\lambda_1=2\cosh K\geq \lambda_2=2\sinh K,
+\end{equation} 
+y se tiene un estado degenerado($\lambda_1=\lambda_2$) en el límite $K\to \infty$ que es equivalente a $T\to 0$. Para obtener la energía libre es conveniente escribir a la función de partición como 
+\begin{equation}
+Z_N=\lambda_1^N\Bigg[1+\bigg(\frac{\lambda_2}{\lambda_1}\bigg)^N\Bigg]
+\end{equation}
+Ya que $\lambda_1<\lambda_2$, se puede hallar el límite fácilmente
+\begin{equation}
+g(T,H)=\lim_{N\to \infty}\Bigg[-\frac{1}{\beta N}\ln Z_N\Bigg]=-\frac{1}{\beta}\ln \lambda_1,
+\end{equation}
+usando \ref{eigen_values} se obtiene
+\begin{equation}
+g(T,H)=-\frac{1}{\beta}\ln\Big\{ e^{\beta J}\cosh(\beta H)+\big[ e^{2\beta J} \cosh^2(\beta H)-2\sinh(2\beta J)  \big]^{1/2} \Big\}
+\end{equation}
+que es una función analítica en $T$ y $H$, de la cual se pueden derivar todas las propiedades termodinámicas del sistema unidimensional. La magnetización promedio por sitio viene dada por 
+\begin{equation}
+m(T,H)=-\bigg( \frac{\partial g}{\partial H} \bigg)_{T}=\frac{\sinh(\beta h)}{\big[ \sinh^2(\beta H)+e^{-4\beta J} \big]^{1/2}}.
+\end{equation}
 \section{Metodología}
 \subsection{Método de Monte Carlo}
 \subsubsection{Ecuación maestra}
@@ -216,19 +271,19 @@ w(y\rightarrow y')=\left\{
         \end{array}
     \right.
 \end{equation}
-donde el tiempo $\tau$ se interpreta como "step de Monde Carlo", se ha escogido $\tau=1$.
+donde el tiempo $\tau$ se interpreta como "step de Monde Carlo".%, se ha escogido $\tau=1$.
 
 \subsubsection{Método de Monte Carlo para el Modelo de Ising}
 Se presentan a continuación los pasos del método de Monte Carlo y el diagrama de flujo para generar la cadena de Markov.
 \begin{enumerate}
 \item Escoger una configuración inicial de spins en el retículo.
-\item Se selecciona un sitio al azar y se calcula la energía en ese sitio para las interacciones con los vecinos mas cercanos. 
+\item Se selecciona un sitio al azar y se calcula la energía en ese sitio para las interacciones con los vecinos más cercanos. 
 \item Verificar el signo de $E$.
 \item Si $E$ es positiva se hace el cambio de spin en el sitio indicado, esto es $\sigma_i=-\sigma_i$.
 \item Si $E$ es negativa pero $\exp(-\beta \Delta \mathcal{H})>p_t$, donde $p_t$ es un numero aleatorio entre $0$ y $1$, se cambia al spin, de otra manera se reinicia el ciclo.
 \end{enumerate}
 %es fácil ver que estos pasos reproducen la prescripción de Metropolis.
-con estos pasos se hace una simulación de MC con la prescripción de Metropolis.
+con estos pasos se hace una simulación de Monte Carlo con la prescripción de Metropolis.
 \pagebreak
 \begin{figure}[H]
 \begin{center}
@@ -282,8 +337,25 @@ Para el caso en el que $H=0$ se tiene el Hamiltoniano \ref{H2} en este caso cuan
 \end{center} 
 \caption{Magnetización vrs. Temperatura}
 \end{figure}
-En este caso se puede observar claramente como después de cierta temperatura crítica se observa una transición de fase en el material ferromagnético, una vez alcanzando el equilibrio solo se tienen pequeñas fluctuaciones alrededor de una una magnetización $M=0$.
-Para las mismas condiciones que en el caso anterior pero con la diferencia que ahora se tiene el estado aleaotorio escogido para iniciar la simulación es en el que todos los spins $\sigma_i=+1$
+En este caso se puede observar claramente como después de cierta temperatura crítica se observa una transición de fase en el material ferromagnético, una vez alcanzando el equilibrio solo se tienen pequeñas fluctuaciones alrededor de una una magnetización $M=0$.La temperatura crítica en este caso es $T_c=\frac{2}{1+\sqrt{2}}=\approx 2.6919$ en la siguiente figura se identifica a está temperatura con una linea vertical roja.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.6]{PlotMvT_sim1_v02.png} 
+\end{center} 
+\caption{Magnetización vrs. Temperatura}
+\end{figure}
+como se puede apreciar hay efectos por el tamaño finito del retículo. Para investigar como afecta el tamaño del retículo en la estimación numérica del punto crítico se hace otra simulación con las mismas condiciones pero con un retículo de $N=500$ es decir una matriz con $N\times N=25000$ sitios.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.6]{PlotMvT_sim1_v03.png} 
+\end{center} 
+\caption{Magnetización vrs. Temperatura}
+\end{figure}
+Es evidente que al aumentar el tamaño del retículo se tienen una mejor aproximación para el punto crítico, esto sugiere que es posible quitar los efectos de tamaño finito cuando se hacen simulaciones con un retículo más grande. Otro efecto importante de aumentar el tamaño del retículo es que se ve una transición mas suave, consistente con las transiciones de fase continua(transiciones de segundo orden).
+
+
+
+Para las mismas condiciones que en el caso anterior pero con la diferencia que ahora se tiene el estado aleaotorio escogido para iniciar la simulación es en el que todos los spins $\sigma_i=+1$. 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.6]{PlotMvT_sim2.png} 
