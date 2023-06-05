@@ -37,8 +37,8 @@ class isingModel(object): # Ising Model object
     def setInitialState(self):#establece el estado aleotorio inicial del reticulo (lattice)
         #self.intialLattice=self.lattice=[[random.choice([-1,1]) for x in range(self.N)] for y in range(self.N)]
         #self.initialLattice=self.lattice=[[-1.0 for x in range(self.N)] for y in range(self.N)] 
-        self.lattice=np.ones([self.N, self.N])*-1.0
-        self.initialLattice=np.ones([self.N, self.N])*-1.0
+        self.lattice=np.ones([self.N, self.N])*1.0
+        self.initialLattice=np.ones([self.N, self.N])*1.0
         ''' for i in range(self.N):
         for j in range(self.N):
         self.lattice[i][j]='''
@@ -132,7 +132,7 @@ class isingModel(object): # Ising Model object
                                frames = len(self.snapshots),
                                interval =1000/fps, # in ms
                                )
-        anim.save('MC_animation.mp4' ,fps=fps, extra_args=['-vcodec', 'libx264'])
+        anim.save('MC_animation_v04.mp4' ,fps=fps, extra_args=['-vcodec', 'libx264'])
         
     def plotLattice(self):
         s=1
@@ -140,7 +140,7 @@ class isingModel(object): # Ising Model object
     def plotMvrsT(self):
         X=[]
         Y=[]
-        step=(self.maxTemp-self.minTemp)/4500.0
+        step=(self.maxTemp-self.minTemp)/1000.0
         T=self.minTemp
         #self.snapshots.append(self.lattice.copy())
         while (T<=self.maxTemp):
@@ -159,7 +159,7 @@ class isingModel(object): # Ising Model object
         self.plotMvT.xlabel('T ')
         self.plotMvT.ylabel('M ')
         self.plotMvT.title('Magnetizacion(M) vrs. Temperatura(T)')
-        self.plotMvT.savefig('PlotMvT.png')
+        self.plotMvT.savefig('PlotMvT_v04.png')
         
         
                 
@@ -168,7 +168,7 @@ class isingModel(object): # Ising Model object
                 
         
         
-test=isingModel(50,10000,0.1,10,1,1);
+test=isingModel(50,10000,0.1,10,1,0);
 #print(test.lattice)
 '''print(test.nearestNeighborEnergy(0,0))
 print(test.nearestNeighborEnergy(3,0))
@@ -190,8 +190,8 @@ test.plotMvrsT()
 plt.draw()
 plt.show()'''
 snapshots=test.snapshots.copy()
-fps = 30
-nSeconds = 150
+fps = 10
+nSeconds = 100
 
 fig = plt.figure( figsize=(60,60) )
 
@@ -212,7 +212,7 @@ anim = animation.FuncAnimation(
                                interval = 1000 / fps, # in ms
                                )
 
-anim.save('../animations/MC_animation.mp4', fps=fps, extra_args=['-vcodec', 'libx264'])
+anim.save('../animations/MC_animation_v04.mp4', fps=fps, extra_args=['-vcodec', 'libx264'])
 
 print('Done!')
 

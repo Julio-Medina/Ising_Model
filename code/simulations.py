@@ -105,7 +105,8 @@ plt.xlabel('Temperatura')
 #plt.plot(temperatures,times)
 plt.ylabel('Magnetización promedio por sitio')
 plt.plot(temperatures, magnetizations)    """
-        
+
+"""        
 # Compute time vrs. MC iterations
 
 iterations, times, magnetizations=MC_iterations_simulation()    
@@ -113,6 +114,79 @@ plt.xlabel('Número de iteraciones de Monte Carlo')
 plt.ylabel('Tiempo de cómputo')
 plt.plot(iterations,times)
 #plt.ylabel('Magnetización promedio por sitio')
-#plt.plot(temperatures, magnetizations)    
-    
+#plt.plot(temperatures, magnetizations)    """
 
+"""
+## J=1, H=0, T->[0.1,10] N=50, n=10000, parallel magnetization
+simulation=isingModel(50,10000,0.1,10,1,0,simulation_name='sim1');
+simulation.plotMvrsT()"""
+"""
+## J=1, H=0, T->[0.1,10] N=50, n=10000, initial state=1(different magnetization pole, parallel)
+simulation=isingModel(50,10000,0.1,10,1,0,initial_state=1.0,simulation_name='sim2');
+simulation.plotMvrsT()"""
+
+"""
+## J=1, H=1, T->[0.1,10] N=50, n=10000, initial state=1(different magnetization pole, parallel)
+simulation=isingModel(50,10000,0.1,10,1,1,initial_state=1.0,simulation_name='sim3');
+simulation.plotMvrsT()"""
+
+"""
+## J=1, H=-10, T->[0.1,10] N=50, n=10000, initial state=1(different magnetization pole, parallel)
+simulation=isingModel(50,10000,0.1,50,1,-10,initial_state=1.0,simulation_name='sim4');
+simulation.plotMvrsT()#"""
+
+"""
+#J=1, H=0, T->[0.1,10] N=50, n=10000, parallel magnetization, plotTc=True
+simulation=isingModel(50,10000,0.1,10,1,0,simulation_name='sim1_v02',plotTc=True);
+simulation.plotMvrsT()#"""
+"""
+#J=1, H=0, T->[0.1,10] N=500, n=10000, parallel magnetization, plotTc=True
+simulation=isingModel(500,10000,0.1,10,1,0,simulation_name='sim1_v03',plotTc=True);
+simulation.plotMvrsT()#"""
+"""
+#J=1, H=0, T->[0.1,10] N=500, n=10000, parallel magnetization, plotTc=True
+simulation=isingModel(500,10000,0.1,4,0.5,0,simulation_name='sim1_v04',plotTc=True);
+simulation.plotMvrsT()#"""
+"""
+## J=10, H=-1, T->[0.1,10] N=50, n=10000, initial state=1(different magnetization pole, parallel)
+simulation=isingModel(1000,1000000,0.1,50,5,0,initial_state=-1.0,simulation_name='sim5',plotTc=True);
+simulation.plotMvrsT()#"""
+"""
+## J=10, H=-1, T->[0.1,10] N=50, n=10000, initial state=1(different magnetization pole, parallel)
+simulation=isingModel(1000,100000,0.1,50,2,0,initial_state=-1.0,simulation_name='sim6',plotTc=True);
+simulation.plotMvrsT()#"""
+"""
+#J=10, H=-1, T->[0.1,10] N=50, n=10000, initial state=1(different magnetization pole, parallel)
+simulation=isingModel(5000,5000000,0.1,50,2,0,initial_state=-1.0,simulation_name='sim7',plotTc=True);
+simulation.plotMvrsT()#"""
+"""
+#J=10, H=-1, T->[0.1,10] N=50, n=10000, initial state=1(different magnetization pole, parallel)
+simulation=isingModel(5000,5000000,0.1,12,2,0,initial_state=-1.0,simulation_name='sim8',plotTc=True);
+simulation.plotMvrsT()#"""
+"""
+#J=10, H=-1, T->[0.1,10] N=50, n=10000, initial state=1(different magnetization pole, parallel)
+start_time=time.time()
+simulation=isingModel(5000,5000000,0.1,15,3,0,initial_state=-1.0,simulation_name='sim9',plotTc=True);
+simulation.plotMvrsT()
+end_time=time.time()
+delta_time=end_time-start_time
+times.append(delta_time)
+#"""
+"""
+#J=10, H=-1, T->[0.1,10] N=50, n=10000, initial state=1(different magnetization pole, parallel)
+start_time=time.time()
+simulation=isingModel(5000,5000000,0.1,20,4,0,initial_state=-1.0,simulation_name='sim10',plotTc=True);
+simulation.plotMvrsT()
+end_time=time.time()
+delta_time=end_time-start_time
+times.append(delta_time)
+#"""
+
+#J=10, H=-1, T->[0.1,10] N=50, n=10000, initial state=1(different magnetization pole, parallel)
+start_time=time.time()
+simulation=isingModel(10000,8000000,0.1,20,4,0,initial_state=-1.0,simulation_name='sim11',plotTc=True);
+simulation.plotMvrsT()
+end_time=time.time()
+delta_time=end_time-start_time
+times.append(delta_time)
+#"""

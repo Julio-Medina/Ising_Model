@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 
 class isingModel(object): # Ising Model object
 
-    def __init__(self,N,iterations,minTemp, maxTemp, JKb, HKb):
+    def __init__(self,N,iterations,minTemp, maxTemp, JKb, HKb, initial_state=-1, simulation_name='', plotTc=False):
         self.N=N#Dimension del reticulo(red) 
         self.iterations=iterations#Numero de iteraciones
         #self.lattice=[]#np.ones([self.N,self.N])*-1.0#matriz N*N
@@ -27,14 +27,23 @@ class isingModel(object): # Ising Model object
         self.maxTemp=maxTemp
         self.JKb=JKb
         self.HKb=HKb
+        self.initial_state=initial_state
         self.setInitialState()
         import matplotlib.pyplot as plotMvT
         self.plotMvT=plotMvT
+        self.simulation_name=simulation_name
+        self.plotTc=plotTc
+        self.Tc=(2*JKb)/(math.log(1+math.sqrt(2)))
 
     def setInitialState(self):#establece el estado aleotorio inicial del reticulo (lattice)
         #self.intialLattice=self.lattice=[[random.choice([-1,1]) for x in range(self.N)] for y in range(self.N)]
         #self.initialLattice=self.lattice=[[-1.0 for x in range(self.N)] for y in range(self.N)] 
-        self.lattice=self.initialLattice=np.ones([self.N, self.N])*-1.0
+        if self.initial_state!=0:
+            self.lattice=np.ones([self.N, self.N])*self.initial_state
+            self.initialLattice=np.ones([self.N, self.N])*self.initial_state
+        else:
+            self.lattice=np.random.randint(2,size=(self.N,self.N))*2-1
+            
         ''' for i in range(self.N):
         for j in range(self.N):
         self.lattice[i][j]='''
@@ -49,7 +58,7 @@ class isingModel(object): # Ising Model object
         y2= 0           if y==self.N-1  else y+1
         x3= self.N-1    if x==0         else x-1
         x4= 0           if x==self.N-1  else x+1
-        energy=-(self.lattice[x1][y1]+self.lattice[x2][y2]+self.lattice[x3][y3]+self.lattice[x4][y4])*self.lattice[x][y];
+        energy=-(self.lattice[x1][y1]+self.lattice[x2][y2]+self.lattice[x3][y3]+self.lattice[x4][y4])*self.lattice[x][y]*self.JKb;
         return energy
     
     
@@ -62,7 +71,7 @@ class isingModel(object): # Ising Model object
             for j in range(self.N):
                 energy+=self.nearestNeighborEnergy(i,j)
         
-        #energy+=self.lattice.sum()*self.HKb
+        energy+=self.lattice.sum()*self.HKb
         
         
              
@@ -91,7 +100,7 @@ class isingModel(object): # Ising Model object
     def runMonteCarlo(self,T):
         #initial_energy=self.latticeEnergy()
         #deltas_E=[initial_energy]
-        snapshots=[]
+        #snapshots=[]
         for i in range(self.iterations):
             randomX=random.randrange(self.N)
             randomY=random.randrange(self.N)
@@ -115,23 +124,27 @@ class isingModel(object): # Ising Model object
     def plotMvrsT(self):
         X=[]
         Y=[]
-        step=(self.maxTemp-self.minTemp)/950.0
+        step=(self.maxTemp-self.minTemp)/1000.0
         T=self.minTemp
         while (T<=self.maxTemp):
-            self.lattice=self.initialLattice.copy()
-            self.runMonteCarlo(T)
+            #self.lattice=self.initialLattice.copy()
             Y.append(self.latticeMagnetization())
-            X.append(T)            
+            X.append(T)
+            self.runMonteCarlo(T)
+            #Y.append(self.latticeMagnetization())
+            #X.append(T)            
             T+=step
             
         self.plotMvT.cla()# limpia el interfaz de graficos
         #self.plotMvT.plot(X,Y,marker='o',color='blue',linewidth=2)
         self.plotMvT.ylim(-1.2,1.0)
         self.plotMvT.plot(X,Y,color='blue',linewidth=1)
+        if self.plotTc==True:
+            self.plotMvT.axvline(x=self.Tc, color='r')
         self.plotMvT.xlabel('T ')
         self.plotMvT.ylabel('M ')
         self.plotMvT.title('Magnetizacion(M) vrs. Temperatura(T)')
-        self.plotMvT.savefig('PlotMvT.png')
+        self.plotMvT.savefig('PlotMvT_'+self.simulation_name+'.png')
         
         
                 
@@ -140,7 +153,7 @@ class isingModel(object): # Ising Model object
                 
         
         
-#test=isingModel(100,15000,1,200,5,0);
+#test=isingModel(100,15000,.1,5,1,1);
 #print(test.lattice)
 '''print(test.nearestNeighborEnergy(0,0))
 print(test.nearestNeighborEnergy(3,0))
@@ -152,7 +165,7 @@ print(test.nearestNeighborEnergy(3,3))'''
 #test.runMonteCarlo(100)
 #print(test.lattice)
 #print(test.latticeMagnetization())
-#init_lattice=test.lattice
+#init_lattice=test.lattice.copy()
 #test.plotMvrsT()     
 #final_lattice=test.lattice
 #print('Finished')
