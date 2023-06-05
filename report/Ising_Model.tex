@@ -47,7 +47,7 @@ Maestría en Física\\
 \hspace{10pt}
 
 \begin{abstract}
-En mecánica estadística el Modelo de Ising para la modelación teórica de un material ferromagnético consiste en considerar las interacciones de corto rango del momento dipolar magnético de spins moleculares. Los spins se configuran en un retículo n-dimensional y están discretizados. 
+En mecánica estadística el Modelo de Ising para la modelación teórica de un material ferromagnético consiste en considerar las interacciones de corto rango del momento dipolar magnético de spins moleculares. Los spins se configuran en un retículo n-dimensional y están discretizados. Aquí se ha simulado el modelo de Ising por medio del método de Monte Carlo para analizar el comportamiento y determinar si hay transiciones de fase(transiciones continuas). Se encontraron transiciones de fase continuas y efectos del tamaño del retículo que pueden irse eliminando conforme se incrementa el tamaño del retículo.
 
 \end{abstract}
 
@@ -284,10 +284,10 @@ Se presentan a continuación los pasos del método de Monte Carlo y el diagrama 
 \end{enumerate}
 %es fácil ver que estos pasos reproducen la prescripción de Metropolis.
 con estos pasos se hace una simulación de Monte Carlo con la prescripción de Metropolis.
-\pagebreak
+%\pagebreak
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.9]{FluxDiagram.png} 
+\includegraphics[scale=0.5]{FluxDiagram.png} 
 \end{center} 
 \caption{Diagrama de flujo}
 \end{figure}
@@ -344,14 +344,22 @@ En este caso se puede observar claramente como después de cierta temperatura cr
 \end{center} 
 \caption{Magnetización vrs. Temperatura}
 \end{figure}
-como se puede apreciar hay efectos por el tamaño finito del retículo. Para investigar como afecta el tamaño del retículo en la estimación numérica del punto crítico se hace otra simulación con las mismas condiciones pero con un retículo de $N=500$ es decir una matriz con $N\times N=25000$ sitios.
+como se puede apreciar hay efectos por el tamaño finito del retículo. Para investigar como afecta el tamaño del retículo en la estimación numérica del punto crítico se hace otra simulación con las mismas condiciones pero con un retículo de $N=500$ es decir una matriz con $N\times N=250000$ sitios.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.6]{PlotMvT_sim1_v03.png} 
 \end{center} 
 \caption{Magnetización vrs. Temperatura}
 \end{figure}
-Es evidente que al aumentar el tamaño del retículo se tienen una mejor aproximación para el punto crítico, esto sugiere que es posible quitar los efectos de tamaño finito cuando se hacen simulaciones con un retículo más grande. Otro efecto importante de aumentar el tamaño del retículo es que se ve una transición mas suave, consistente con las transiciones de fase continua(transiciones de segundo orden).
+Es evidente que al aumentar el tamaño del retículo se tienen una mejor aproximación para el punto crítico, esto sugiere que es posible quitar los efectos de tamaño finito cuando se hacen simulaciones con un retículo más grande. Otro efecto importante de aumentar el tamaño del retículo es que se ve una transición mas suave, consistente con las transiciones de fase continua(transiciones de segundo orden).\\
+Para confirmar que la temperatura crítica se puede estimar del resultado de la simulación por el método de Monte Carlo se  corre la simulación en el caso en el que $J=0.5$, por lo que $T_c=1.1346$,
+\begin{figure}[H]
+\begin{center}
+¨\includegraphics[scale=0.6]{PlotMvT_sim1_v04.png} 
+\end{center} 
+\caption{Magnetización vrs. Temperatura}
+\end{figure}
+para este caso $T\in[0,4]$, se hace la observación que en estas unidades $K_B=1$. Como se puede notar al cambiar el valor de $J$ se obtuvo una reducción de la temperatura a la que el material pasa a estar totalmente desordenado, desmagnetizado que está de acuerdo al resultado teórico de $T_c$ que se ve marcado en rojo.
 
 
 
@@ -384,8 +392,9 @@ En este caso también se puede ver el efecto que tiene $H\neq0>J$ de incrementar
 
 
 \section{Conclusiones}
-El método de Monte Carlo es una buena opción para encontrar el comportamiento aproximado del modelo de Ising, a través de la prescripción de Metropolis. En general se observaron las transiciones de fase esperadas, de un estado ferromagnético a uno paramagnético, ver figuras
+El método de Monte Carlo es una buena opción para encontrar el comportamiento aproximado del modelo de Ising, a través de la prescripción de Metropolis. En general se observaron las transiciones de fase como se expuso en los resultados, después de pasar la temperatura crítica el material pierde por completo sus propiedades magnéticas.\\
 
+Los efectos de tamaño finito del retículo pueden "quitar" si se tiene un retículo suficientemente grande y un número de iteraciones de Monte Carlo adecuado, en general del orden de $N$ para obtener resultados razonables durante la simulación del Modelo de Ising en 2D.
 \begin{thebibliography}{99}
 %% La bibliografía se ordena en orden alfabético respecto al apellido del 
 %% autor o autor principal

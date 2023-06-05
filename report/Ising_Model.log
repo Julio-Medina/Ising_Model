@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.30)  2 JUN 2023 20:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.30)  2 JUN 2023 22:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -504,7 +504,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -514,28 +518,26 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<LatticeIsing.png, id=97, 343.2825pt x 289.08pt>
+) [2]
+<LatticeIsing.png, id=95, 343.2825pt x 289.08pt>
 File: LatticeIsing.png Graphic file (type png)
 <use LatticeIsing.png>
 Package pdftex.def Info: LatticeIsing.png  used on input line 106.
 (pdftex.def)             Requested size: 137.31056pt x 115.62994pt.
-<Neighbor.png, id=99, 153.57375pt x 173.14688pt>
-File: Neighbor.png Graphic file (type png)
-<use Neighbor.png>
-Package pdftex.def Info: Neighbor.png  used on input line 119.
-(pdftex.def)             Requested size: 61.4284pt x 69.25752pt.
  [3pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.122 \end{figure}
-                   <./LatticeIsing.png>] [4pdfTeX warning (ext4): destination w
-ith the same identifier (name{figure.2}) has been already used, duplicate ignor
-ed
+l.115 \end{equation}
+                     <./LatticeIsing.png>]
+<Neighbor.png, id=105, 153.57375pt x 173.14688pt>
+File: Neighbor.png Graphic file (type png)
+<use Neighbor.png>
+Package pdftex.def Info: Neighbor.png  used on input line 119.
+(pdftex.def)             Requested size: 61.4284pt x 69.25752pt.
+ [4pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -553,24 +555,20 @@ LaTeX Warning: Citation `Silvio' on page 6 undefined on input line 216.
 File: FluxDiagram.png Graphic file (type png)
 <use FluxDiagram.png>
 Package pdftex.def Info: FluxDiagram.png  used on input line 290.
-(pdftex.def)             Requested size: 378.73647pt x 486.46294pt.
-
-Overfull \hbox (33.73647pt too wide) in paragraph at lines 290--291
- [] 
- []
-
-[8] [9pdfTeX warning (ext4): destination with the same identifier (name{figure.
-3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.297 \subsubsection
-                    {Tamaño del retículo} <./FluxDiagram.png>]
-<time_vrs_lattice_size.png, id=194, 462.528pt x 346.896pt>
+(pdftex.def)             Requested size: 210.41057pt x 270.25902pt.
+ [8]
+<time_vrs_lattice_size.png, id=188, 462.528pt x 346.896pt>
 File: time_vrs_lattice_size.png Graphic file (type png)
 <use time_vrs_lattice_size.png>
 Package pdftex.def Info: time_vrs_lattice_size.png  used on input line 301.
 (pdftex.def)             Requested size: 296.01689pt x 222.01266pt.
+ [9pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.305 
+       <./FluxDiagram.png>]
 <time_vrs_T.png, id=196, 1339.8858pt x 706.0779pt>
 File: time_vrs_T.png Graphic file (type png)
 <use time_vrs_T.png>
@@ -647,85 +645,103 @@ File: PlotMvT_sim1_v03.png Graphic file (type png)
 <use PlotMvT_sim1_v03.png>
 Package pdftex.def Info: PlotMvT_sim1_v03.png  used on input line 350.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+<PlotMvT_sim1_v04.png, id=231, 462.528pt x 346.896pt>
+File: PlotMvT_sim1_v04.png Graphic file (type png)
+<use PlotMvT_sim1_v04.png>
+Package pdftex.def Info: PlotMvT_sim1_v04.png  used on input line 358.
+(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
  [14pdfTeX warning (ext4): destination with the same identifier (name{figure.9}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.355 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-10}) has been already used, duplicate ignored
+l.361 \end{figure}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{figure.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.355 
-       <./PlotMvT_sim1_v02.png> <./PlotMvT_sim1_v03.png>]
-<PlotMvT_sim2.png, id=239, 462.528pt x 346.896pt>
+l.361 \end{figure}
+                   <./PlotMvT_sim1_v02.png> <./PlotMvT_sim1_v03.png>]
+<PlotMvT_sim2.png, id=240, 462.528pt x 346.896pt>
 File: PlotMvT_sim2.png Graphic file (type png)
 <use PlotMvT_sim2.png>
-Package pdftex.def Info: PlotMvT_sim2.png  used on input line 361.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-<PlotMvT_sim3.png, id=240, 462.528pt x 346.896pt>
-File: PlotMvT_sim3.png Graphic file (type png)
-<use PlotMvT_sim3.png>
-Package pdftex.def Info: PlotMvT_sim3.png  used on input line 369.
+Package pdftex.def Info: PlotMvT_sim2.png  used on input line 369.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
  [15pdfTeX warning (ext4): destination with the same identifier (name{figure.11
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.373 E
-       n este caso se puede ver claramente la influencia del campo magnétic...
- <./PlotMvT_sim2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 373--374
+l.373 s
+       e obtiene el resultado esperado, se inicia con un material ferromagn�...
+ <./PlotMvT_sim1_v04.png>]
+<PlotMvT_sim3.png, id=247, 462.528pt x 346.896pt>
+File: PlotMvT_sim3.png Graphic file (type png)
+<use PlotMvT_sim3.png>
+Package pdftex.def Info: PlotMvT_sim3.png  used on input line 377.
+(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
 
  []
 
-<PlotMvT_sim4.png, id=248, 462.528pt x 346.896pt>
-File: PlotMvT_sim4.png Graphic file (type png)
-<use PlotMvT_sim4.png>
-Package pdftex.def Info: PlotMvT_sim4.png  used on input line 378.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 [16pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.382 E
-       n este caso también se puede ver el efecto que tiene $H\neq0>J$ de i...
- <./PlotMvT_sim3.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 414.
- [17pdfTeX warning (ext4): destination with the same identifier (name{figure.13
-}) has been already used, duplicate ignored
+l.382 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.414 \end{document}
-                     <./PlotMvT_sim4.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 414.
+l.382 
+       <./PlotMvT_sim2.png> <./PlotMvT_sim3.png>]
+<PlotMvT_sim4.png, id=257, 462.528pt x 346.896pt>
+File: PlotMvT_sim4.png Graphic file (type png)
+<use PlotMvT_sim4.png>
+Package pdftex.def Info: PlotMvT_sim4.png  used on input line 386.
+(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--396
+
+ []
+
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.407 \bibitem{Salinas}
+                       Silvio R.A Salinas. \textit{Introduction to Statistic...
+ <./PlotMvT_sim4.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 423.
+ [18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 423.
  (./Ising_Model.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 414.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 414.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 423.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 423.
 Package rerunfilecheck Info: File `Ising_Model.out' has not changed.
 (rerunfilecheck)             Checksum: 5201AD47D75812934D307498B033CF1D;1156.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 414.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 423.
  ) 
 Here is how much of TeX's memory you used:
- 9397 strings out of 481239
- 138783 string characters out of 5920377
+ 9407 strings out of 481239
+ 138974 string characters out of 5920377
  424037 words of memory out of 5000000
- 24365 multiletter control sequences out of 15000+600000
+ 24372 multiletter control sequences out of 15000+600000
  537630 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,7n,40p,978b,376s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,7n,40p,978b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
@@ -744,10 +760,10 @@ ts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm100
 0.pfb>
-Output written on Ising_Model.pdf (17 pages, 567561 bytes).
+Output written on Ising_Model.pdf (18 pages, 587781 bytes).
 PDF statistics:
- 347 PDF objects out of 1000 (max. 8388607)
- 284 compressed objects within 3 object streams
- 94 named destinations out of 1000 (max. 500000)
- 194 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 354 PDF objects out of 1000 (max. 8388607)
+ 288 compressed objects within 3 object streams
+ 96 named destinations out of 1000 (max. 500000)
+ 199 words of extra memory for PDF output out of 10000 (max. 10000000)
 
