@@ -47,7 +47,7 @@ Maestría en Física\\
 \hspace{10pt}
 
 \begin{abstract}
-En mecánica estadística el Modelo de Ising para la modelación teórica de un material ferromagnético consiste en considerar las interacciones de corto rango del momento dipolar magnético de spins moleculares. Los spins se configuran en un retículo n-dimensional y están discretizados. Aquí se ha simulado el modelo de Ising por medio del método de Monte Carlo para analizar el comportamiento y determinar si hay transiciones de fase(transiciones continuas). Se encontraron transiciones de fase continuas y efectos del tamaño del retículo que pueden irse eliminando conforme se incrementa el tamaño del retículo.
+En mecánica estadística el Modelo de Ising consiste en considerar las interacciones de corto rango del momento dipolar magnético de spins moleculares para la modelación teórica de un material ferromagnético. Los spins se configuran en un retículo n-dimensional y están discretizados. Aquí se ha simulado el modelo de Ising por medio del método de Monte Carlo para analizar el comportamiento y determinar si hay transiciones de fase(transiciones continuas). Se encontraron transiciones de fase continuas y efectos del tamaño del retículo que pueden irse eliminando conforme se incrementa el tamaño del retículo.
 
 \end{abstract}
 
@@ -174,7 +174,7 @@ La última expresión puede ser expresada como una matriz de $2\times 2$, cuyos 
 \,\exp(-K)\, &\, \exp(K-L)\,
 \end{pmatrix}
 \end{equation}
-usando el formalismo matricial(ver \cite{Silvio}, \cite{Pathria}) se puede expresar la función de partición canónica \ref{canonical_partition_fucntion} como la traza de un producto de $N$ matrices de transferencia
+usando el formalismo matricial(ver \cite{Salinas}, \cite{Pathria}) se puede expresar la función de partición canónica \ref{canonical_partition_fucntion} como la traza de un producto de $N$ matrices de transferencia
 \begin{equation}
 Z_N=\text{Tr}(\mathbf{T})^N.
 \end{equation}
@@ -213,7 +213,7 @@ m(T,H)=-\bigg( \frac{\partial g}{\partial H} \bigg)_{T}=\frac{\sinh(\beta h)}{\b
 \section{Metodología}
 \subsection{Método de Monte Carlo}
 \subsubsection{Ecuación maestra}
-Se introduce lo que se conoce como ecuación maestra(ver \cite{Silvio}) para la evolución temporal de procesos estocásticos Markovianos. Si $P(x,t)$ es la probabilidad de encontrar un sistema en el estado microscópico $y$, en el tiempo $t$. Derivando esta probabilidad se tiene
+Se introduce lo que se conoce como ecuación maestra(ver \cite{Salinas}) para la evolución temporal de procesos estocásticos Markovianos. Si $P(x,t)$ es la probabilidad de encontrar un sistema en el estado microscópico $y$, en el tiempo $t$. Derivando esta probabilidad se tiene
 \begin{equation}
 \frac{\partial}{\partial t}P(y,t)=T_0-T_f
 \end{equation}
@@ -330,14 +330,14 @@ Otro parámetro de interés para evaluar el tiempo de cómputo es el número de 
 
 \section{Resultados}
 Para poder evaluar el comportamiento del algoritmo de Monte Carlo se puede usar la magnetización promedio, en este caso es interesante ver como el comportamiento del parámetro $J$ que mide describe como se comportan las interacciones entre spins y $H$ la intensidad del campo magnético externo aplicado en el Hamiltoniano \ref{H1}, afectan en la simulación numérica del modelo de Ising, también es de interés ver como $J/H$ afecta el comportamiento en general .\\
-Para el caso en el que $H=0$ se tiene el Hamiltoniano \ref{H2} en este caso cuando no hay mas interacción que la que se tiene por los efectos entre spins, para este caso se hace una simulación con $J=1$ el tamaño del retículo es $N=50$ es decir que se tienen $N\times N=250$ sitios, la temperatura varia en un rango $T\in[0.1,10]$ y se tienen $n=10000$ iteraciones de Monte Carlo, se escoge a estado aleatorio del retículo como el estado en el que todos los spins tiene valor $\sigma_i=-1$ es decir que el material ferromagnético esta totalmente magnetizado.
+Para el caso en el que $H=0$ se tiene el Hamiltoniano \ref{H2} en este caso cuando no hay mas interacción que la que se tiene por los efectos entre spins, para este caso se hace una simulación con $J=1$ el tamaño del retículo es $N=50$ es decir que se tienen $N\times N=250$ sitios, la temperatura varia en un rango $T\in[0.1,10]$ y se tienen $n=10000$ iteraciones de Monte Carlo, se escoge a estado aleatorio del retículo como el estado en el que todos los spins tienen valor $\sigma_i=-1$ es decir que el material ferromagnético está totalmente magnetizado.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.6]{PlotMvT_sim1.png} 
 \end{center} 
 \caption{Magnetización vrs. Temperatura}
 \end{figure}
-En este caso se puede observar claramente como después de cierta temperatura crítica se observa una transición de fase en el material ferromagnético, una vez alcanzando el equilibrio solo se tienen pequeñas fluctuaciones alrededor de una una magnetización $M=0$.La temperatura crítica en este caso es $T_c=\frac{2}{1+\sqrt{2}}=\approx 2.6919$ en la siguiente figura se identifica a está temperatura con una linea vertical roja.
+En este caso se puede observar claramente como después de cierta temperatura crítica se observa una transición de fase en el material ferromagnético, una vez alcanzando el equilibrio solo se tienen pequeñas fluctuaciones alrededor de una una magnetización $M=0$. La temperatura crítica en este caso es $T_c=\frac{2}{1+\sqrt{2}}=\approx 2.6919$ en la siguiente figura se identifica a está temperatura con una linea vertical roja.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.6]{PlotMvT_sim1_v02.png} 
@@ -363,7 +363,7 @@ para este caso $T\in[0,4]$, se hace la observación que en estas unidades $K_B=1
 
 
 
-Para las mismas condiciones que en el caso anterior pero con la diferencia que ahora se tiene el estado aleaotorio escogido para iniciar la simulación es en el que todos los spins $\sigma_i=+1$. 
+Para las mismas condiciones que en el primer caso($H=0 ,\, N\times N=250,\, n=10000 $) pero con la diferencia que ahora se tiene que el estado aleatorio escogido para iniciar la simulación es en el que todos los spins $\sigma_i=+1$. 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.6]{PlotMvT_sim2.png} 
@@ -380,21 +380,31 @@ Para el caso en el $J/H=1$ y se empieza en el estado en el que todos los spins $
 \end{figure}
 En este caso se puede ver claramente la influencia del campo magnético externo $H$, ya que el sistema tiende a alinearse con este para después empezar a pasar totalmente al desorden característico de la transición de fase. En el repositorio de \texttt{GitHub} \url{https://github.com/Julio-Medina/Ising_Model/tree/main} se pueden encontrar animaciones de estos procesos.\\
 
-En el caso en que $J/H=\frac{1}{10}$ se obtiene el siguiente resultado en el que $T\in[0.1,50]$ 
+En el caso en que $J/H=\frac{1}{10}$ se obtiene el siguiente resultado en el que $T\in[0.1,300]$ con las mismas condiciones que el primer caso ($H=0 ,\, N\times N=250,\, n=10000 $) se obtiene
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.6]{PlotMvT_sim4.png} 
+\includegraphics[scale=0.3]{PlotMvT_sim12.png} 
 \end{center} 
 \caption{Magnetización vrs. Temperatura}
 \end{figure}
-En este caso también se puede ver el efecto que tiene $H\neq0>J$ de incrementar la temperatura crítica $T_c$ por lo que se necesita simular el sistema a mayores temperaturas para ver la transición de fase, es importante notar que en este caso la temperatura $T_c$ tiene un incremento aproximado de un factor de $10$, esto es consistente con la solución analítica del modelo de Ising \ref{Tc}.
+En este caso también se puede ver el efecto que tiene $H\neq0>J$ de incrementar la temperatura crítica $T_c$ por lo que se necesita simular el sistema a mayores temperaturas para ver la transición de fase, es decir que el efecto de valores mas grandes de $H$ tienden a incrementar la temperatura crítica en el caso en el que $H$ es paralelo al estado inicial.
+Para valores de $J/H>1$ la temperatura crítica en la que ocurre la transición de fase tiende a incrementar para valores más grandes del parámetro de interacción $J$, en la siguiente simulación se puede el caso $J/H=2$.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{PlotMvT_sim13.png} 
+\end{center} 
+\caption{Magnetización vrs. Temperatura}
+\end{figure}
+en este caso la interacción entre los spins del retículo es mayor por lo que se empieza a ver un cambio en la magnetización para valores más elevados de la temperatura, esto es consistente con el comportamiento esperado del sistema.
 
 
 
 \section{Conclusiones}
-El método de Monte Carlo es una buena opción para encontrar el comportamiento aproximado del modelo de Ising, a través de la prescripción de Metropolis. En general se observaron las transiciones de fase como se expuso en los resultados, después de pasar la temperatura crítica el material pierde por completo sus propiedades magnéticas.\\
+El método de Monte Carlo es una buena opción para encontrar el comportamiento aproximado del modelo de Ising, a través de la prescripción de Metropolis. En general se observaron transiciones de fase como se expuso en los resultados, después de pasar la temperatura crítica el material pierde por completo sus propiedades magnéticas y pasa a un estado totalmente desordenado o con entropía máxima esto es consistente con los resultados hallados por Onsanger \cite{Onsanger}.\\
 
-Los efectos de tamaño finito del retículo pueden "quitar" si se tiene un retículo suficientemente grande y un número de iteraciones de Monte Carlo adecuado, en general del orden de $N$ para obtener resultados razonables durante la simulación del Modelo de Ising en 2D.
+Los efectos de tamaño finito del retículo pueden "quitar" sí se tiene un retículo suficientemente grande y un número de iteraciones de Monte Carlo adecuado, en general del orden de $N$ para obtener resultados razonables durante la simulación del Modelo de Ising en 2D.\\
+
+Durante las simulaciones con el método de Monte Carlo se obtuvieron resultados consistentes con la solución analítica del modelo de Ising en 2D, se pudo verificar que el comportamiento del sistema depende de los parámetros $H$ y $J$ del Hamiltoniano \ref{H1} y que la temperatura crítica se puede ajustar dependiendo de la relación $J/H$.
 \begin{thebibliography}{99}
 %% La bibliografía se ordena en orden alfabético respecto al apellido del 
 %% autor o autor principal

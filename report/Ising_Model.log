@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.30)  2 JUN 2023 22:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.30)  6 JUN 2023 15:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -542,22 +542,14 @@ Package pdftex.def Info: Neighbor.png  used on input line 119.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.140 \begin{equation}
-                       <./Neighbor.png>]
-
-LaTeX Warning: Citation `Silvio' on page 5 undefined on input line 177.
-
-[5]
-
-LaTeX Warning: Citation `Silvio' on page 6 undefined on input line 216.
-
-[6] [7]
-<FluxDiagram.png, id=175, 420.82219pt x 540.51938pt>
+                       <./Neighbor.png>] [5] [6] [7]
+<FluxDiagram.png, id=177, 420.82219pt x 540.51938pt>
 File: FluxDiagram.png Graphic file (type png)
 <use FluxDiagram.png>
 Package pdftex.def Info: FluxDiagram.png  used on input line 290.
 (pdftex.def)             Requested size: 210.41057pt x 270.25902pt.
  [8]
-<time_vrs_lattice_size.png, id=188, 462.528pt x 346.896pt>
+<time_vrs_lattice_size.png, id=190, 462.528pt x 346.896pt>
 File: time_vrs_lattice_size.png Graphic file (type png)
 <use time_vrs_lattice_size.png>
 Package pdftex.def Info: time_vrs_lattice_size.png  used on input line 301.
@@ -569,7 +561,7 @@ Package pdftex.def Info: time_vrs_lattice_size.png  used on input line 301.
                                                   \fi \fi 
 l.305 
        <./FluxDiagram.png>]
-<time_vrs_T.png, id=196, 1339.8858pt x 706.0779pt>
+<time_vrs_T.png, id=198, 1339.8858pt x 706.0779pt>
 File: time_vrs_T.png Graphic file (type png)
 <use time_vrs_T.png>
 Package pdftex.def Info: time_vrs_T.png  used on input line 310.
@@ -587,7 +579,7 @@ Overfull \hbox (56.96884pt too wide) in paragraph at lines 310--311
 l.314 E
        l tiempo de computo para $n$(número de iteraciones) y $N$(tamaño de...
  <./time_vrs_lattice_size.png>]
-<M_vrs_T.png, id=203, 1339.8858pt x 706.0779pt>
+<M_vrs_T.png, id=205, 1339.8858pt x 706.0779pt>
 File: M_vrs_T.png Graphic file (type png)
 <use M_vrs_T.png>
 Package pdftex.def Info: M_vrs_T.png  used on input line 318.
@@ -604,12 +596,12 @@ Overfull \hbox (56.96884pt too wide) in paragraph at lines 318--319
                                                   \fi \fi 
 l.322 \subsubsection
                     {Iteraciones de Monte Carlo} <./time_vrs_T.png>]
-<time_vrs_MC_iterations.png, id=210, 462.528pt x 346.896pt>
+<time_vrs_MC_iterations.png, id=212, 462.528pt x 346.896pt>
 File: time_vrs_MC_iterations.png Graphic file (type png)
 <use time_vrs_MC_iterations.png>
 Package pdftex.def Info: time_vrs_MC_iterations.png  used on input line 326.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-<PlotMvT_sim1.png, id=213, 462.528pt x 346.896pt>
+<PlotMvT_sim1.png, id=215, 462.528pt x 346.896pt>
 File: PlotMvT_sim1.png Graphic file (type png)
 <use PlotMvT_sim1.png>
 Package pdftex.def Info: PlotMvT_sim1.png  used on input line 336.
@@ -627,7 +619,7 @@ name{figure.7}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.339 \end{figure}
                    <./M_vrs_T.png> <./time_vrs_MC_iterations.png>]
-<PlotMvT_sim1_v02.png, id=222, 462.528pt x 346.896pt>
+<PlotMvT_sim1_v02.png, id=224, 462.528pt x 346.896pt>
 File: PlotMvT_sim1_v02.png Graphic file (type png)
 <use PlotMvT_sim1_v02.png>
 Package pdftex.def Info: PlotMvT_sim1_v02.png  used on input line 343.
@@ -640,12 +632,12 @@ Package pdftex.def Info: PlotMvT_sim1_v02.png  used on input line 343.
 l.347 c
        omo se puede apreciar hay efectos por el tamaño finito del retículo...
  <./PlotMvT_sim1.png>]
-<PlotMvT_sim1_v03.png, id=230, 462.528pt x 346.896pt>
+<PlotMvT_sim1_v03.png, id=232, 462.528pt x 346.896pt>
 File: PlotMvT_sim1_v03.png Graphic file (type png)
 <use PlotMvT_sim1_v03.png>
 Package pdftex.def Info: PlotMvT_sim1_v03.png  used on input line 350.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-<PlotMvT_sim1_v04.png, id=231, 462.528pt x 346.896pt>
+<PlotMvT_sim1_v04.png, id=233, 462.528pt x 346.896pt>
 File: PlotMvT_sim1_v04.png Graphic file (type png)
 <use PlotMvT_sim1_v04.png>
 Package pdftex.def Info: PlotMvT_sim1_v04.png  used on input line 358.
@@ -663,7 +655,7 @@ name{figure.10}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.361 \end{figure}
                    <./PlotMvT_sim1_v02.png> <./PlotMvT_sim1_v03.png>]
-<PlotMvT_sim2.png, id=240, 462.528pt x 346.896pt>
+<PlotMvT_sim2.png, id=242, 462.528pt x 346.896pt>
 File: PlotMvT_sim2.png Graphic file (type png)
 <use PlotMvT_sim2.png>
 Package pdftex.def Info: PlotMvT_sim2.png  used on input line 369.
@@ -676,7 +668,7 @@ Package pdftex.def Info: PlotMvT_sim2.png  used on input line 369.
 l.373 s
        e obtiene el resultado esperado, se inicia con un material ferromagn�...
  <./PlotMvT_sim1_v04.png>]
-<PlotMvT_sim3.png, id=247, 462.528pt x 346.896pt>
+<PlotMvT_sim3.png, id=249, 462.528pt x 346.896pt>
 File: PlotMvT_sim3.png Graphic file (type png)
 <use PlotMvT_sim3.png>
 Package pdftex.def Info: PlotMvT_sim3.png  used on input line 377.
@@ -699,14 +691,24 @@ l.382
                                                   \fi \fi 
 l.382 
        <./PlotMvT_sim2.png> <./PlotMvT_sim3.png>]
-<PlotMvT_sim4.png, id=257, 462.528pt x 346.896pt>
-File: PlotMvT_sim4.png Graphic file (type png)
-<use PlotMvT_sim4.png>
-Package pdftex.def Info: PlotMvT_sim4.png  used on input line 386.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+<PlotMvT_sim12.png, id=259, 1387.584pt x 724.8681pt>
+File: PlotMvT_sim12.png Graphic file (type png)
+<use PlotMvT_sim12.png>
+Package pdftex.def Info: PlotMvT_sim12.png  used on input line 386.
+(pdftex.def)             Requested size: 416.27841pt x 217.4621pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--396
+Overfull \hbox (71.27841pt too wide) in paragraph at lines 386--387
+ [] 
+ []
 
+<PlotMvT_sim13.png, id=260, 1387.584pt x 724.8681pt>
+File: PlotMvT_sim13.png Graphic file (type png)
+<use PlotMvT_sim13.png>
+Package pdftex.def Info: PlotMvT_sim13.png  used on input line 394.
+(pdftex.def)             Requested size: 416.27841pt x 217.4621pt.
+
+Overfull \hbox (71.27841pt too wide) in paragraph at lines 394--395
+ [] 
  []
 
 [17pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
@@ -714,31 +716,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 395--396
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.407 \bibitem{Salinas}
+l.398 e
+       n este caso la interacción entre los spins del retículo es mayor po...
+ <./PlotMvT_sim12.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 403--404
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--406
+
+ []
+
+[18pdfTeX warning (ext4): destination with the same identifier (name{figure.15}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.417 \bibitem{Salinas}
                        Silvio R.A Salinas. \textit{Introduction to Statistic...
- <./PlotMvT_sim4.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 423.
- [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 423.
+ <./PlotMvT_sim13.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 433.
+ [19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 433.
  (./Ising_Model.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 423.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 423.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 433.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 433.
 Package rerunfilecheck Info: File `Ising_Model.out' has not changed.
 (rerunfilecheck)             Checksum: 5201AD47D75812934D307498B033CF1D;1156.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 423.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 433.
  ) 
 Here is how much of TeX's memory you used:
- 9407 strings out of 481239
- 138974 string characters out of 5920377
+ 9415 strings out of 481239
+ 139117 string characters out of 5920377
  424037 words of memory out of 5000000
- 24372 multiletter control sequences out of 15000+600000
+ 24377 multiletter control sequences out of 15000+600000
  537630 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,7n,40p,978b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -760,10 +775,10 @@ ts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm100
 0.pfb>
-Output written on Ising_Model.pdf (18 pages, 587781 bytes).
+Output written on Ising_Model.pdf (19 pages, 687111 bytes).
 PDF statistics:
- 354 PDF objects out of 1000 (max. 8388607)
- 288 compressed objects within 3 object streams
- 96 named destinations out of 1000 (max. 500000)
- 199 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 366 PDF objects out of 1000 (max. 8388607)
+ 297 compressed objects within 3 object streams
+ 98 named destinations out of 1000 (max. 500000)
+ 204 words of extra memory for PDF output out of 10000 (max. 10000000)
 
