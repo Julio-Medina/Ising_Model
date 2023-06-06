@@ -181,7 +181,7 @@ end_time=time.time()
 delta_time=end_time-start_time
 times.append(delta_time)
 #"""
-
+"""
 #J=10, H=-1, T->[0.1,10] N=50, n=10000, initial state=1(different magnetization pole, parallel)
 start_time=time.time()
 simulation=isingModel(10000,8000000,0.1,20,4,0,initial_state=-1.0,simulation_name='sim11',plotTc=True);
@@ -190,3 +190,11 @@ end_time=time.time()
 delta_time=end_time-start_time
 times.append(delta_time)
 #"""
+
+## J=1, H=-10, T->[0.1,10] N=50, n=10000, initial state=1(different magnetization pole, parallel)
+simulation=isingModel(50,10000,0.1,300,1,30,initial_state=-1.0,simulation_name='sim12_v01');
+simulation.plotMvrsT()#"""
+"""
+## J=1, H=-10, T->[0.1,10] N=50, n=10000, initial state=1(different magnetization pole, parallel)
+simulation=isingModel(50,10000,0.1,50,2,1,initial_state=-1.0,simulation_name='sim13');
+simulation.plotMvrsT()#"""

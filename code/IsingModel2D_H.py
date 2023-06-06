@@ -120,7 +120,7 @@ class isingModel(object): # Ising Model object
                 
     def plotLattice(self):
         s=1
-
+    # run MonteCarlo simulation over a range of temperatures and plots the result
     def plotMvrsT(self):
         X=[]
         Y=[]
