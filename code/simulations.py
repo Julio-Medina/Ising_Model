@@ -190,7 +190,7 @@ end_time=time.time()
 delta_time=end_time-start_time
 times.append(delta_time)
 #"""
-
+"""
 ## J=1, H=-10, T->[0.1,10] N=50, n=10000, initial state=1(different magnetization pole, parallel)
 simulation=isingModel(50,10000,0.1,300,1,30,initial_state=-1.0,simulation_name='sim12_v01');
 simulation.plotMvrsT()#"""
