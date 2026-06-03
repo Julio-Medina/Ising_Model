@@ -329,4 +329,4 @@ Maestría en Física
 
 ## License
 
-No license file is currently included. If this repository will be public, consider adding an open-source license such as MIT, BSD-3-Clause, or GPL-3.0.
+No license file is currently included. 
