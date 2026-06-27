@@ -1,0 +1,16 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Phase Transitions}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Landau Phenomenology}{subsection.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.2}{The Ising Model}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.3}{Exact Solution of the One-Dimensional Ising Model}{section.1}% 5
+\BOOKMARK [1][-]{section.2}{Methodology}{}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Monte Carlo Method}{section.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Master Equation}{subsection.2.1}% 8
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Monte Carlo Method}{subsection.2.1}% 9
+\BOOKMARK [3][-]{subsubsection.2.1.3}{Monte Carlo Method for the Ising Model}{subsection.2.1}% 10
+\BOOKMARK [2][-]{subsection.2.2}{Computation Times}{section.2}% 11
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Lattice Size}{subsection.2.2}% 12
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Temperature}{subsection.2.2}% 13
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Number of Monte Carlo Iterations}{subsection.2.2}% 14
+\BOOKMARK [1][-]{section.3}{Results}{}% 15
+\BOOKMARK [1][-]{section.4}{Conclusions}{}% 16
