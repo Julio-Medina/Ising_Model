@@ -322,11 +322,10 @@ The simulations also illustrate finite-size effects: smaller lattices show stron
 
 ## Author
 
-Julio A. Medina  
-Universidad de San Carlos  
-Escuela de Ciencias Físicas y Matemáticas  
-Maestría en Física
-
+**BSc. Julio A. Medina**  
+University of San Carlos of Guatemala  
+School of Physical Sciences and Mathematics  
+Master's Program in Physics
 ## License
 
 No license file is currently included. 
